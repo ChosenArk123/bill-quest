@@ -64,7 +64,7 @@ export const rooms = {
         "name": "Evening custodian",
         "color": "#71858c",
         "beats": [
-          "They are still debating upstairs. Good thing I packed dinner."
+          "Floor debate went past midnight again. When leadership wants a bill through before recess, the coffee pots never get cold."
         ]
       },
       {
@@ -74,8 +74,8 @@ export const rooms = {
         "name": "Visitor guide",
         "color": "#849875",
         "beats": [
-          "People send Congress ideas from all over the country. A member has to introduce one as a bill before Congress can work on it.",
-          "The drafting desk is straight ahead. They will help you put yours together."
+          "Welcome to the Capitol! Citizens bring thousands of petition ideas here every week. But under Article I, only a member of Congress can formally introduce a bill.",
+          "The drafting desk is straight ahead. Counsel will help frame your policy idea into statutory language."
         ],
         "source": "powers"
       },
@@ -86,8 +86,8 @@ export const rooms = {
         "name": "Archivist",
         "color": "#ac875c",
         "beats": [
-          "The House and Senate keep their own records. Before a bill goes to the president, we check that they approved the same words.",
-          "That is a constitutional requirement. Rules about hearings, scheduling, and debate add other steps along the way."
+          "The House and Senate maintain separate legislative journals. Before enrollment for the White House, our clerks verify that every single word and punctuation mark matches.",
+          "That bicameral concurrence is non-negotiable under Article I, Section 7. Procedural rules along the way determine whether a bill ever gets that far."
         ],
         "source": "checks"
       }
@@ -165,9 +165,8 @@ export const rooms = {
         "name": "Committee staffer",
         "color": "#8ba293",
         "beats": [
-          "A referral means this subject is our responsibility. The chair still decides whether to spend time on your bill.",
-          "At a hearing, we listen to witnesses. At markup, members consider changes to the text.",
-          "Subcommittees handle the detailed work, then send it back to the full committee. The full committee decides whether to report the bill."
+          "Referral establishes our committee's legal jurisdiction. But don't celebrate yet—the chair exercises absolute gatekeeping power over what gets scheduled.",
+          "At hearings, we gather witness testimony. In markup, members debate textual amendments. Only if the full committee votes to report does your bill reach the floor calendar."
         ],
         "source": "procedure"
       },
@@ -178,8 +177,8 @@ export const rooms = {
         "name": "Local system operator",
         "color": "#b08a69",
         "beats": [
-          "Our alert equipment is old. We can upgrade it, but replacing it takes money and time.",
-          "I would like a longer deadline. I also know people need these alerts now."
+          "My county has forty-year-old alert relays. We want dependable emergency alerts for our families as much as anyone, but equipment costs real money.",
+          "Give small municipal providers realistic phase-in time and grant support, and we can actually make these upgrades work."
         ],
         "source": "faction"
       }
@@ -277,8 +276,8 @@ export const rooms = {
         "name": "Representative Vale",
         "color": "#a6a076",
         "beats": [
-          "People in my district want these upgrades. A colleague from another district might be hearing more complaints about the cost.",
-          "We each bring those concerns here. Getting enough of us to agree can take some changes."
+          "My suburban constituents demand immediate alert access. But across the aisle, rural members face intense pushback regarding compliance mandates.",
+          "Every representative answers to a distinct congressional district. Forging a 218-member majority demands compromises."
         ],
         "source": "faction"
       },
@@ -289,8 +288,8 @@ export const rooms = {
         "name": "Leadership aide",
         "color": "#7999ab",
         "beats": [
-          "Your bill is on the calendar. I still need to find time for it on the floor.",
-          "The structured rule tells members which amendments they can offer. We vote on that before we vote on the bill."
+          "Your bill holds a spot on the calendar, but floor time is intensely contested. That’s why the Rules Committee drafts structured rules to restrict floor amendments.",
+          "Without special rules, 435 members offering floor amendments would bring House legislative business to a dead halt."
         ],
         "source": "rules"
       }
@@ -368,8 +367,8 @@ export const rooms = {
         "name": "Senator Rowan",
         "color": "#a58dab",
         "beats": [
-          "My state has big cities and small rural systems. They will not all find these upgrades equally easy.",
-          "I may support the bill but want more debate before a final vote. Those are two different decisions."
+          "My state encompasses massive agricultural valleys and dense metropolitan centers. A one-size-fits-all timeline simply doesn't fit every local utility.",
+          "I may favor your bill's policy, but I will vigorously defend our Senate tradition of unlimited debate until our concerns are addressed."
         ],
         "source": "cloture"
       },
@@ -380,9 +379,8 @@ export const rooms = {
         "name": "Senate parliamentarian",
         "color": "#a99a6e",
         "beats": [
-          "A senator who places a hold is warning the leaders that they may object or delay things. A hold does not legally veto a bill.",
-          "On ordinary legislation, ending debate through cloture normally takes 60 votes with all 100 seats filled. Passage has its own vote.",
-          "Sometimes everyone agrees on how to proceed. Then we can get to a vote without cloture."
+          "Senate Rule XXII governs the filibuster. Cloture requires three-fifths of all senators duly chosen and sworn—a mandatory 60 votes.",
+          "Holds are merely informal notices that a senator plans to object. If leadership cannot negotiate unanimous consent, a roll call on cloture is inevitable."
         ],
         "source": "cloture"
       }
@@ -450,9 +448,8 @@ export const rooms = {
         "name": "Chamber liaison",
         "color": "#b2a47d",
         "beats": [
-          "The House likes its version. The Senate likes its version. We need one version they can both accept.",
-          "We can send amendments back and forth or ask for a conference committee. Conference is one option, not a required stop.",
-          "We are using amendment exchange here. Whichever chamber has not approved the proposed text still needs to vote on it."
+          "The House passed its bill; the Senate passed its version. Under Article I, Section 7, the President can only sign an identical text.",
+          "We can resolve differences via amendment exchange—often called 'amendment ping-pong'—or convene a formal conference committee to draft a conference report."
         ],
         "source": "concurrence"
       }
@@ -525,9 +522,8 @@ export const rooms = {
         "name": "Executive staffer",
         "color": "#91aaa0",
         "beats": [
-          "The president has to consider the whole bill. They cannot sign the parts they like and cross out the rest.",
-          "If they return it with objections, Congress can try to override. That takes two-thirds in each chamber.",
-          "There is also a rule for taking no action: ten days, excluding Sundays. Whether Congress can receive a returned bill matters. The ledger explains it; that ending is not playable yet."
+          "Under Article I, Section 7, the President must consider the enrolled bill as a single package. The Supreme Court struck down line-item vetoes decades ago.",
+          "The President can sign, return the bill with objections for a regular veto, or allow it to become law without signature after ten days (excluding Sundays) if Congress remains in session."
         ],
         "source": "veto"
       }
@@ -595,8 +591,8 @@ export const rooms = {
         "name": "Congressional historian",
         "color": "#aa9363",
         "beats": [
-          "A bill becoming law tells you that it got through the required approvals. You still have to judge what the law actually does.",
-          "When a bill fails, look at where it stopped. A committee chair, a chamber vote, or a veto can stop a proposal even when plenty of people support it."
+          "Enactment proves a coalition navigated every constitutional hurdle. But Madison reminded us in Federalist 51 that checks and balances are designed to make lawmaking deliberate, not easy.",
+          "When a proposal fails, examine where the institutional brake applied: committee gatekeeping, structured rules, the Senate filibuster, or the executive veto."
         ],
         "source": "checks"
       }
