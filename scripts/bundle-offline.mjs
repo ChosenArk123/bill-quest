@@ -34,10 +34,15 @@ standalone = standalone.replace(
   '<link rel="stylesheet" href="./style.css">',
   `<style>\n${css}\n</style>`
 );
-// Replace module script with inline bundled script
+// Remove external module script from head
 standalone = standalone.replace(
   '<script type="module" src="./app.js"></script>',
-  `<script>\n${combinedJs}\n</script>`
+  ''
+);
+// Place inline bundled script right before </body> so DOM elements exist on execution
+standalone = standalone.replace(
+  '</body>',
+  `<script>\n${combinedJs}\n</script>\n</body>`
 );
 
 await writeFile(resolve('play_offline.html'), standalone, 'utf8');

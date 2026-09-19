@@ -4,7 +4,9 @@ import { rooms, roomOrder, roomFor, objectsFor, isWalkable } from './world-data.
 import { cards, sources, scenes, stages, glossary } from './content.js';
 import { initial, reduce, forecast, proposal, voteKind, equal, validateSave } from './game.js';
 
-const app = document.querySelector('#app'), dialog = document.querySelector('#dialog');
+let app = document.querySelector('#app'), dialog = document.querySelector('#dialog');
+function getApp() { if (!app) app = document.querySelector('#app'); return app; }
+function getDialog() { if (!dialog) dialog = document.querySelector('#dialog'); return dialog; }
 const KEY = 'billquest-v1';
 let state = initial(), storage = true, lastFocus = null;
 let world = null, location = null, conversation = null, resumeDialogue = null;
@@ -113,15 +115,17 @@ function objective() {
 
 function render(focus = false) {
   world?.dispose();
+  const root = getApp();
+  if (!root) return;
   const place = rooms[location.room];
-  app.innerHTML = `${header()}<main id="main" class="world-main"><div class="room-heading"><div><p class="eyebrow">${place.subtitle}</p><h1>${place.name}</h1></div><div class="world-clock">${state.phase === 'builder' ? 'DRAFT IN PROGRESS' : state.phase === 'end' ? esc(state.outcome) : 'H.R. SIM-1'}<button type="button" class="ticks-badge" data-action="explainTicks" title="Click to learn about session ticks and the legislative calendar" aria-label="${state.ticks} session ticks remaining. Click to learn about session ticks.">${state.ticks} session ticks ⓘ</button></div></div><div class="world-objective"><span>◆</span><p>${objective()}</p></div><div class="world-frame"><canvas id="world" tabindex="0" role="application" aria-label="Explorable ${place.name}. Move with arrow keys or W A S D. E or Enter interacts nearby. Click the floor to walk; click a person to approach and talk. Accessible destinations follow the map."></canvas><div class="location-tag">${place.name.toUpperCase()}</div></div><div class="exploration-bar"><p id="nearby" aria-live="polite">Walk toward someone, or choose a destination below.</p>${button('Interact · E', 'interact', 'id="interact" disabled')}</div><div class="walk-help"><span>ARROWS / WASD <b>walk</b></span><span>E / ENTER <b>interact</b></span><span>TRACKPAD <b>click to walk</b></span><span>ESC <b>close dialogue</b></span></div><details class="destinations"><summary>People, objects & doors · keyboard / trackpad navigation</summary><div id="destinations"></div></details><p class="world-footnote">${storage ? 'Progress saved in this browser.' : 'Storage unavailable. Keep this tab open.'} Take your time. The people and vote counts are fictional; the government rules are real.</p></main>`;
+  root.innerHTML = `${header()}<main id="main" class="world-main"><div class="room-heading"><div><p class="eyebrow">${place.subtitle}</p><h1>${place.name}</h1></div><div class="world-clock">${state.phase === 'builder' ? 'DRAFT IN PROGRESS' : state.phase === 'end' ? esc(state.outcome) : 'H.R. SIM-1'}<button type="button" class="ticks-badge" data-action="explainTicks" title="Click to learn about session ticks and the legislative calendar" aria-label="${state.ticks} session ticks remaining. Click to learn about session ticks.">${state.ticks} session ticks ⓘ</button></div></div><div class="world-objective"><span>◆</span><p>${objective()}</p></div><div class="world-frame"><canvas id="world" tabindex="0" role="application" aria-label="Explorable ${place.name}. Move with arrow keys or W A S D. E or Enter interacts nearby. Click the floor to walk; click a person to approach and talk. Accessible destinations follow the map."></canvas><div class="location-tag">${place.name.toUpperCase()}</div></div><div class="exploration-bar"><p id="nearby" aria-live="polite">Walk toward someone, or choose a destination below.</p>${button('Interact · E', 'interact', 'id="interact" disabled')}</div><div class="walk-help"><span>ARROWS / WASD <b>walk</b></span><span>E / ENTER <b>interact</b></span><span>TRACKPAD <b>click to walk</b></span><span>ESC <b>close dialogue</b></span></div><details class="destinations"><summary>People, objects & doors · keyboard / trackpad navigation</summary><div id="destinations"></div></details><p class="world-footnote">${storage ? 'Progress saved in this browser.' : 'Storage unavailable. Keep this tab open.'} Take your time. The people and vote counts are fictional; the government rules are real.</p></main>`;
 
   world = mountWorld(document.querySelector('#world'), {
     phase: state.phase,
     highest: highestRoom(),
     location,
     amended: Object.values(state.current).filter(v => v === 1).length,
-    blocked: () => dialog.open,
+    blocked: () => Boolean(getDialog()?.open),
     reduced: () => document.documentElement.classList.contains('reduce-motion') || matchMedia('(prefers-reduced-motion: reduce)').matches,
     onNearby: (o) => {
       document.querySelector('#nearby').textContent = o ? `${o.name}${o.locked ? ' · awaiting your bill' : ' · press E to interact'}` : 'Walk toward someone, or choose a destination below.';
@@ -580,14 +584,24 @@ document.addEventListener('change', e => {
     } catch {}
   }
 });
-dialog.addEventListener('cancel', e => {
-  e.preventDefault();
-  if (state.notice) dispatch({ type: 'dismiss' });
-  else closeModal();
-});
+function init() {
+  const d = getDialog();
+  if (d && !d._hasCancelListener) {
+    d._hasCancelListener = true;
+    d.addEventListener('cancel', e => {
+      e.preventDefault();
+      if (state.notice) dispatch({ type: 'dismiss' });
+      else closeModal();
+    });
+  }
+  try {
+    document.documentElement.classList.toggle('reduce-motion', localStorage.getItem('billquest-motion') === 'true');
+  } catch {}
+  render();
+}
 
-try {
-  document.documentElement.classList.toggle('reduce-motion', localStorage.getItem('billquest-motion') === 'true');
-} catch {}
-
-render();
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
