@@ -6,11 +6,16 @@ export function mountWorld(canvas, { phase, highest, location, onInteract, onRoo
   const objects = objectsFor(room, phase, highest);
   let player = { x: location.x ?? 11, y: location.y ?? 11 };
   let facing = 'down', last = 0, frame = 0, keys = new Set(), path = [], arrival = null, disposed = false, lastNear = '';
+  const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1;
   const ctx = canvas.getContext('2d');
-  canvas.width = W * T;
-  canvas.height = H * T;
+  canvas.width = Math.round(W * T * dpr);
+  canvas.height = Math.round(H * T * dpr);
 
   function nearest() {
+    const fx = player.x + (facing === 'left' ? -1 : facing === 'right' ? 1 : 0);
+    const fy = player.y + (facing === 'up' ? -1 : facing === 'down' ? 1 : 0);
+    const frontObj = objects.find(o => o.x === fx && o.y === fy);
+    if (frontObj) return frontObj;
     return objects.find(o => Math.abs(o.x - player.x) + Math.abs(o.y - player.y) <= 1) || null;
   }
 
@@ -193,6 +198,7 @@ export function mountWorld(canvas, { phase, highest, location, onInteract, onRoo
 
   function draw() {
     if (disposed) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     frame++;
 
     // Base background
@@ -248,8 +254,8 @@ export function mountWorld(canvas, { phase, highest, location, onInteract, onRoo
 
     // 2. Specialized Chamber Architecture & Staging
     if (room === 'corridor') {
-      // Marble neoclassical fluted columns along the hallway
-      for (const cx of [l + 2, l + 5, r - 5, r - 2]) {
+      // Marble neoclassical fluted columns along hallway walls (avoiding doors)
+      for (const cx of [0, 4, 20, 23]) {
         rect(cx * T, 10, 20, 58, '#dce3d5');
         rect(cx * T + 2, 12, 16, 54, '#f0f5ea');
         rect(cx * T + 5, 14, 2, 50, '#cad4c0');
@@ -444,11 +450,18 @@ export function mountWorld(canvas, { phase, highest, location, onInteract, onRoo
         // Brass handle
         rect(x + 21, y + 5, 3, 5, '#eec55c');
 
-        // Portal Destination Plate
-        ctx.font = 'bold 6px monospace';
+        // Architectural Header Plaque above door
+        const label = (o.to === 'corridor' ? 'CAPITOL' : o.to).toUpperCase();
+        rect(x - 14, y - 39, 52, 12, '#121f28');
+        rect(x - 14, y - 39, 52, 1, '#d8c279'); // gold top bevel
+        rect(x - 14, y - 28, 52, 1, '#5e4e2c'); // bronze bottom shadow
+        rect(x - 14, y - 39, 1, 12, '#8f7b44'); // left trim
+        rect(x + 37, y - 39, 1, 12, '#8f7b44'); // right trim
+
+        ctx.font = 'bold 8px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillStyle = o.locked ? '#858880' : '#faecc0';
-        ctx.fillText((o.to === 'corridor' ? 'CAPITOL' : o.to).toUpperCase(), x + 12, y - 30);
+        ctx.fillStyle = o.locked ? '#76888c' : '#fcedc0';
+        ctx.fillText(label, x + 12, y - 30);
         ctx.textAlign = 'left';
       } else if (o.type === 'evidence') {
         // Evidence Ledger Table

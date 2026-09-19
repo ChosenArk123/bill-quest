@@ -98,7 +98,7 @@ export const cards = {
   "preemption": {
     "name": "State preemption standard",
     "icon": "⚖",
-    "reason": "National carriers seek uniform federal alert rules. States fight to preserve local emergency authority.",
+    "reason": "Under the Supremacy Clause of Article VI, valid federal alert rules displace conflicting state requirements. However, states invoke Tenth Amendment police powers to protect local emergency authority.",
     "versions": [
       "Federal accessibility rules preempt state and local emergency-alert requirements to ensure national uniformity.",
       "Federal rules establish a regulatory floor, allowing states to enforce additional emergency-alert protections."
@@ -117,7 +117,7 @@ export const cards = {
         1
       ]
     ],
-    "trade": "Preserving state authority pleases governors and local agencies, but carriers face differing regional requirements."
+    "trade": "National preemption ensures uniformity under Article VI, but preserving state standards respects state regulatory authority under the Tenth Amendment."
   },
   "penalties": {
     "name": "FCC enforcement penalties",
@@ -193,6 +193,18 @@ export const sources = {
     "tag": "FOUNDATIONAL ARGUMENT",
     "text": "Madison argues that divided powers help keep one part of government from taking control. Your bill needs agreement from several institutions. That gives more people a say, but it also gives them more chances to stop it.",
     "url": "https://avalon.law.yale.edu/18th_century/fed51.asp"
+  },
+  "federalism": {
+    "title": "Article VI & Tenth Amendment · Preemption",
+    "tag": "CONSTITUTION",
+    "text": "Under the Supremacy Clause of Article VI, valid federal legislation overrides conflicting state laws. The Tenth Amendment frames the competing concern: powers not delegated to the federal government remain with the states, leading state officials to resist total federal displacement of local emergency alert standards.",
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "calendar": {
+    "title": "Article I & 20th Amendment · Congressional Calendar",
+    "tag": "CONSTITUTION",
+    "text": "Under Article I and the Twentieth Amendment, each Congress spans a two-year term across two annual sessions. When a Congress adjourns sine die at the end of its two-year term, all pending bills expire. Sponsoring a bill is therefore a race against the calendar; actions like committee hearings, floor debates, cloture waiting periods, and veto overrides all consume scarce legislative time.",
+    "url": "https://www.senate.gov/about/powers-procedures/calendars-schedules.htm"
   }
 };
 
@@ -276,7 +288,7 @@ export const scenes = {
     "tag": "SIMULATION",
     "actor": "Senate communications committee",
     "title": "The Senate has its own concerns.",
-    "text": "We have received the House bill. Senators represent whole states, two per state, so they may bring different concerns to it. We will keep the Senate committee work brief here. In real life, getting through the House does not guarantee Senate action.",
+    "text": "We have received the House bill. Senators represent whole states, two per state, so they may bring different concerns to it. We will keep the Senate committee work brief here. Getting through the House does not guarantee Senate action.",
     "lesson": "Our committee has a change to consider. If we adopt it, keep an eye on the House and Senate copies. They may no longer match.",
     "evidence": "concurrence"
   },
@@ -303,9 +315,9 @@ export const scenes = {
     "tag": "CONSTITUTION",
     "actor": "United States Senate",
     "title": "The Senate votes on passage.",
-    "text": "We can vote on passage now. The number to reach is 51. Everyone votes in this game, and we leave out vice-presidential tie-breaks. These are made-up vote counts, not predictions about real senators.",
-    "lesson": "If the bill passes, we will check this version against the one the House approved.",
-    "evidence": "cloture"
+    "text": "The Senate proceeds to final passage. Most Senate measures pass by a simple majority—51 affirmative votes with all 100 seats participating. This is distinct from Rule XXII cloture, which limits debate and normally requires three-fifths of senators duly chosen and sworn.",
+    "lesson": "If the bill passes, we will check this version against the one the House approved under Article I.",
+    "evidence": "concurrence"
   },
   "reconcile": {
     "step": 5,
@@ -330,7 +342,7 @@ export const scenes = {
     "tag": "CONSTITUTION",
     "actor": "United States Senate",
     "title": "Will the Senate agree?",
-    "text": "The House has agreed to this version. Now it is our turn. Senators have agreed to a timetable for this vote. That agreement is part of this game’s story; it is not an automatic exception to Senate debate rules.",
+    "text": "The House has agreed to this version. Now it is our turn. By unanimous consent, senators have agreed to a timetable for this vote.",
     "lesson": "We are voting on exactly the text the House approved.",
     "evidence": "concurrence"
   },
@@ -381,6 +393,7 @@ export const glossary = {
   "Markup": "A committee meeting to consider amendments and decide what text to report.",
   "Presentment": "Sending the bill to the president after both chambers have approved the same text.",
   "Rider": "A provision attached to a bill, often on a different subject.",
+  "Session ticks": "A simulation of the limited legislative calendar in a two-year Congress. Under Article I and the 20th Amendment, a Congress lasts two years before adjourning sine die; any bills not enacted by then expire and must be reintroduced from scratch in the next Congress. In the game, actions consume ticks to reflect the time costs of committee hearings, markups, floor debates, cloture waiting periods, and bicameral reconciliation.",
   "Sponsor": "The member who introduces a bill. A co-sponsor signs on to support it.",
   "Standing committee": "A permanent committee that handles a particular set of subjects.",
   "Subcommittee": "A smaller group within a committee that handles more specialized work.",

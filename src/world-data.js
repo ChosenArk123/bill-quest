@@ -37,12 +37,12 @@ export const rooms = {
       ],
       [
         17,
-        5,
+        6,
         "shelf"
       ],
       [
         18,
-        5,
+        6,
         "shelf"
       ],
       [
@@ -603,7 +603,7 @@ export const roomOrder=Object.keys(rooms);
 export function roomFor(phase){if(['builder','referral'].includes(phase))return 'corridor';if(['committee','markup','report'].includes(phase))return 'committee';if(phase.startsWith('house')||phase==='overrideHouse')return 'house';if(phase.startsWith('senate')||phase==='cloture'||phase==='overrideSenate')return 'senate';if(phase==='reconcile')return 'agreement';if(phase==='president')return 'executive';return 'archive';}
 export function objectsFor(room,phase,highest=0){
  const base=rooms[room];const list=base.npcs.map(n=>({...n,type:'npc'}));
- list.push({id:'ledger',x:room==='corridor'?18:base.size[2]-2,y:4,name:'Evidence shelf',type:'evidence'});
+ list.push({id:'ledger',x:room==='corridor'?18:base.size[2]-2,y:room==='corridor'?5:4,name:'Evidence shelf',type:'evidence'});
  if(room==='corridor'){
   list.push({id:'main',x:11,y:6,name:phase==='builder'?'Drafting desk':'Referral clerk',type:'main'});
   ['committee','house','senate','agreement','executive','archive'].forEach((to,i)=>list.push({id:`door-${to}`,x:2+i*4,y:2,type:'door',to,name:rooms[to].name,locked:roomOrder.indexOf(to)>highest}));

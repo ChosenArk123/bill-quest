@@ -13,7 +13,7 @@ export const conversations = {
   markup: { speaker: 'Committee chair', beats: [
     'The committee will come to order for markup. This is where members offer specific textual amendments and battle over policy language.',
     'Here is the first proposed amendment. Review the changes carefully, especially if it alters the core provision you promised your coalition.',
-    'You are watching Madison’s Federalist 10 in real time. Competing economic and regional factions will always push their own interests. Our job is hammering out a coalition.'
+    'In markup, competing economic and regional factions will always push their own interests—the very dynamic Madison described in Federalist 10. Our job is hammering out a workable coalition.'
   ] },
   report: { speaker: 'Committee clerk', beats: [
     'The amendment period is closed. The question now before the full committee is whether to order H.R. SIM-1 favorably reported.',
@@ -37,7 +37,7 @@ export const conversations = {
   ] },
   senateAmend: { speaker: 'Senate committee staffer', beats: [
     'H.R. SIM-1 has arrived from the House. Every senator here represents an entire state, which brings distinct regional challenges to the table.',
-    'We have streamlined our Senate committee markup here. In the real Senate, passing the House gives a bill zero guarantee of even being taken up.',
+    'Passing the House gives a bill zero guarantee over here. The Senate is an independent chamber, and our committee has its own distinct priorities before anything reaches the floor.',
     'Our senators drafted an amendment addressing rural broadband carriers. Adopting it will mean the House and Senate texts no longer match.'
   ] },
   senateRoute: { speaker: 'Senator Rowan', beats: [
@@ -46,16 +46,16 @@ export const conversations = {
     'A unanimous consent agreement can schedule a final vote quickly, provided no senator objects. If someone holds the bill, sponsors must file for cloture.'
   ] },
   cloture: { speaker: 'Senate parliamentarian', beats: [
-    'A cloture petition signed by sixteen senators has been filed under Senate Rule XXII. A mandatory procedural waiting period applies, costing three session ticks.',
+    'A cloture petition signed by sixteen senators has been filed under Senate Rule XXII. A mandatory procedural waiting period applies before a vote can occur, consuming valuable legislative time.',
     'On ordinary legislation, invoking cloture requires three-fifths of all senators duly chosen and sworn—a rigid 60 votes out of 100.',
     'Cloture merely cuts off the filibuster and limits debate to thirty hours. It is not final passage; the Senate must still hold an independent vote on the bill itself.'
   ] },
   senateVote: { speaker: 'Senate clerk', beats: [
     'The Senate proceeds to the question of passage. With all 100 senators participating, 51 affirmative votes are required to pass.',
-    'These totals reflect simulated voting blocs, omitting vice-presidential tie-breakers. If approved, we will compare this Senate engrossment with the House version.'
+    'Remember that passage requires a simple majority (51 votes here), whereas cloture required three-fifths (60 votes) to limit debate. If approved, we will compare this Senate engrossment with the House version.'
   ] },
   reconcile: { speaker: 'Bicameral clerk', beats: [
-    'Both the House and Senate have voted yes. But under the Bicameralism Clause of Article I, Section 7, Congress cannot present differing texts to the President.',
+    'Both the House and Senate have voted yes. But under the bicameral concurrence requirement of Article I, Sections 1 and 7, Congress cannot present differing texts to the President.',
     'Even minor differences must be resolved. Congress often uses an amendment exchange—sending amendments between the chambers—or convenes a formal conference committee.',
     'Here are the two approved versions side by side. We will resolve this through amendment exchange, sending one unified proposal for chamber approval.'
   ] },

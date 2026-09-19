@@ -23,23 +23,23 @@ export function voteKind(phase) { return ({report:'committee',houseRule:'rule',h
 function record(s, text, data={}) { s.history.push({phase:s.phase,actor:scenes[s.phase]?.actor || 'Bill sponsors',text,...data}); }
 function enter(s, phase) { s.phase=phase; const e=scenes[phase]?.evidence;if(e&&!s.evidence.includes(e))s.evidence.push(e); }
 function checkpoint(s) { const c=clone(s);c.checkpoint=null;c.notice=null;s.checkpoint=c; }
-function fail(s, message) { record(s,message);s.outcome='Not enacted';s.failure={phase:s.phase,reason:message};enter(s,'end');s.notice={title:'Why the bill stopped',text:message}; }
-function spend(s,n=1) { s.ticks=Math.max(0,s.ticks-n);if(s.ticks===0){fail(s,'Congress has reached the end of its term, and this bill ran out of time. It would need reintroduction in the next Congress. Session ticks are just the game’s way of tracking time.');return false;}return true; }
+function fail(s, message) { record(s,message);s.outcome='Not enacted';s.failure={phase:s.phase,reason:message};enter(s,'end');s.notice=null; }
+function spend(s,n=1) { s.ticks=Math.max(0,s.ticks-n);if(s.ticks===0){fail(s,'Congress has adjourned sine die at the end of its two-year term. Under Article I and the 20th Amendment, all unpassed bills expire when the congressional term ends and require reintroduction from scratch in the next Congress.');return false;}return true; }
 function amend(s,id) { if(!id)return;const before=s.current[id];s.current[id]=1;record(s,`${cards[id].name}: amendment adopted. ${cards[id].trade}`,{id,before,after:1,adopted:true}); }
 export function actions(s) {
+ if(s.phase==='end')return ['retry','restart','claim'];
  if(s.notice)return ['dismiss'];
  if(s.phase==='builder')return ['toggle','priority','introduce'];
- if(s.phase==='end')return ['retry','restart','claim'];
  if(['committee','markup','houseAmend','senateAmend'].includes(s.phase))return proposal(s)?['accept','retain']:['continue'];
- if(s.phase==='senateRoute')return forecast(s,'cloture').total>=60?['consent','seek']:['negotiate','seek','refuse'];
+ if(s.phase==='senateRoute')return forecast(s,'cloture').total>=60?['consent','seek']:(proposal(s)?['negotiate','seek','refuse']:['seek','refuse']);
  if(s.phase==='reconcile')return equal(s.house,s.senate)?['identical']:['packageHouse','packageSenate'];
  return ['continue'];
 }
 export function reduce(state,action) {
+ if(action.type==='restart')return initial();
+ if(action.type==='dismiss'){const s=clone(state);s.notice=null;return s;}
  if(!actions(state).includes(action.type))throw Error(`Action ${action.type} is invalid in ${state.phase}`);
  const s=clone(state);
- if(action.type==='dismiss'){s.notice=null;return s;}
- if(action.type==='restart')return initial();
  if(action.type==='retry') {if(!s.checkpoint)return s;const c=clone(s.checkpoint);c.checkpoint=clone(s.checkpoint);c.notice={title:'Checkpoint restored',text:'You are back at the earlier decision. This is a retry of the game, not a chance to change an introduced bill outside the amendment process.'};return c;}
  if(action.type==='claim'){s.claim=action.value==='checks'?'correct':'retry';return s;}
  if(s.phase==='builder') {
@@ -55,7 +55,7 @@ export function reduce(state,action) {
   if(action.type==='accept')amend(s,id);else if(id)record(s,`${cards[id].name}: supporters kept the current wording; the proposed amendment did not get enough backing.`,{id,adopted:false});
   if(!spend(s))return s;
   enter(s,({committee:'markup',markup:'report',houseAmend:'houseVote',senateAmend:'senateRoute'})[previous]);
-  s.notice={title:action.type==='accept'?'Text amended':'Text preserved',text:id?(action.type==='accept'?cards[id].trade:'You kept the wording, but the objections are still there. They will affect the vote count. Lawmakers, rather than the bill itself, decide whether an amendment passes.'):'No further amendment is proposed here.'};
+  s.notice={title:action.type==='accept'?'Text amended':'Text preserved',text:id?(action.type==='accept'?cards[id].trade:'You kept the original wording, but unresolved objections will affect support on upcoming roll call votes.'):'No further amendment is proposed here.'};
   return s;
  }
  const kind=voteKind(s.phase);
@@ -72,8 +72,8 @@ export function reduce(state,action) {
   if(next==='president'){if(!equal(s.house,s.senate))throw Error('Identical text required');s.enrolled=clone(s.current);}
   if(previous==='overrideSenate')s.outcome='Enacted over veto';
   enter(s,next);
-  if(['houseAmend','senateAmend','reconcile'].includes(next))checkpoint(s);
-  s.notice={title:kind.startsWith('override')?'Override vote passed':previous==='cloture'?'Cloture invoked · bill not yet passed':'Vote passed',text:`${f.total} voted yes. You needed ${f.threshold}. ${previous==='report'?'The bill can go to the floor once the leaders schedule it.':''}`};return s;
+  if(['houseAmend','senateAmend'].includes(next)||(next==='reconcile'&&!equal(s.house,s.senate)))checkpoint(s);
+  s.notice=next==='end'?null:{title:kind.startsWith('override')?'Override vote passed':previous==='cloture'?'Cloture invoked · bill not yet passed':'Vote passed',text:`${f.total} voted yes. You needed ${f.threshold}. ${previous==='report'?'The bill can go to the floor once the leaders schedule it.':''}`};return s;
  }
  if(s.phase==='senateRoute') {
   if(action.type==='refuse'){fail(s,'The sponsors turned down the consent deal and chose not to seek cloture. With no agreement on how to proceed, the bill stalled.');return s;}
@@ -84,10 +84,13 @@ export function reduce(state,action) {
  }
  if(s.phase==='reconcile') {
   if(action.type==='identical'){s.enrolled=clone(s.current);enter(s,'president');return s;}
-  const previousText=clone(s.current);
-  s.current=clone(action.type==='packageHouse'?s.house:s.senate);
-  record(s,`Negotiators propose the ${action.type==='packageHouse'?'House':'Senate'} package. The other chamber still has to approve it.`);
-  for(const id of Object.keys(s.current))if(previousText[id]!==s.current[id])record(s,`${cards[id].name}: the proposed deal brings back the House wording. The Senate still needs to agree.`,{id,before:previousText[id],after:s.current[id],adopted:false});
+  const chamber=action.type==='packageHouse'?'House':'Senate';
+  const responding=action.type==='packageHouse'?'Senate':'House';
+  const chosen=action.type==='packageHouse'?s.house:s.senate;
+  const other=action.type==='packageHouse'?s.senate:s.house;
+  s.current=clone(chosen);
+  record(s,`Negotiators propose the ${chamber} package. The ${responding} still has to approve it.`);
+  for(const id of Object.keys(s.current))if(chosen[id]!==other[id])record(s,`${cards[id].name}: the proposed deal brings back the ${chamber} wording. The ${responding} still needs to agree.`,{id,before:other[id],after:chosen[id],adopted:false});
   enter(s,equal(s.house,s.current)?'senateConcur':'houseConcur');return s;
  }
  if(s.phase==='president') {
