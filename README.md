@@ -5,43 +5,58 @@
 
 ---
 
-## Classroom Quick Start: How Students Play
+## 🛑 If GitHub is Blocked at Your School: How to Play
 
-Bill Quest is designed as a **zero-install, 100% web-native application** that runs entirely within **Google Chrome on school-managed Chromebooks**.
+Many school districts block `github.com` and `github.io` on student accounts. Bill Quest includes **two guaranteed workarounds** that bypass school firewalls completely:
 
-### 1. For Students in Class
-Students simply open the web link in Google Chrome on their Chromebooks:
-```
-https://chosenark123.github.io/bill-quest/
-```
-*(Or the static link provided by your teacher on Google Classroom / Canvas / school website).*
+### Solution 1: Single-File Offline HTML (100% Offline, Zero Internet Needed)
+The repository includes a self-contained, single-file edition: **[`bill-quest.html`](bill-quest.html)** (also copied as **[`play_offline.html`](play_offline.html)**).
 
-- ❌ **No downloads or software installation**
-- ❌ **No command line, terminal, or bash access**
-- ❌ **No browser extensions or plugins**
-- ❌ **No accounts, logins, or student data collection**
-- ❌ **No Node.js or Python runtime needed on student devices**
-
-Students click the link and immediately begin drafting their bill.
+1. **For the Teacher / Sponsoring Student**:
+   - Download **`bill-quest.html`** from this repository (from home or an unblocked computer).
+   - Upload `bill-quest.html` to **Google Classroom** or share it via a **Google Drive folder** (Google Workspace is never blocked on school Chromebooks).
+2. **For Students on School Chromebooks**:
+   - Open Google Classroom / Drive on the Chromebook.
+   - Click `bill-quest.html` and click the **Download** button.
+   - Open the Chromebook **Files** app (tap the Search/Launcher key and type `Files`).
+   - Open your **Downloads** folder and **double-click `bill-quest.html`** (or right-click → **Open with Chrome**).
+   - **That's it!** The game runs directly in Chrome as a local file (`file:///home/chronos/.../bill-quest.html`).
+   - ⚡ **Zero internet required, zero external requests, zero CORS errors, and zero firewall blocks.**
 
 ---
 
-## How to Deploy for Your Class
+### Solution 2: Embed in a School Google Site (`sites.google.com`)
+School web filters almost universally whitelist `sites.google.com` because it is an official Google Workspace for Education tool.
 
-The game builds into a completely static, standalone directory (`dist/`) requiring no backend server or database:
+1. Go to [Google Sites](https://sites.google.com/) while logged into your school account.
+2. Create a blank page.
+3. On the right panel, click **Insert** → **Embed** (`<>`).
+4. Select the **Embed code** tab.
+5. Paste the entire contents of `bill-quest.html` into the box and click **Next** → **Insert**.
+6. Resize the embed box to fill the page, then click **Publish**.
+7. Share the Google Sites link with students. They can play directly within the school-approved domain!
 
-### Option A: GitHub Pages (Recommended & Automated)
-The repository includes an automated GitHub Actions deployment workflow (`.github/workflows/pages.yml`):
-1. In your GitHub repository, go to **Settings** → **Pages**.
+---
+
+### Solution 3: Alternative Web Hosting (If GitHub is blocked but web hosting is allowed)
+If your school blocks GitHub but allows other popular educational hosts, deploy the `dist/` folder to:
+- **Cloudflare Pages** (`*.pages.dev`)
+- **Vercel** (`*.vercel.app`)
+- **Netlify** (`*.netlify.app`)
+- **Canvas LMS / Schoology**: Upload `dist/` or `bill-quest.html` directly into Course Files or Modules.
+
+---
+
+## Standard Web Deployment (When GitHub is Allowed)
+
+If your network does not block GitHub Pages:
+1. In your GitHub repository, navigate to **Settings** → **Pages**.
 2. Under **Build and deployment** → **Source**, select **GitHub Actions**.
-3. Every push to the `main` branch automatically runs the test suite, builds the production bundle, and deploys it to your public GitHub Pages URL:
+3. Every push to `main` automatically builds and deploys to:
    ```
    https://<your-username>.github.io/<repo-name>/
    ```
-4. Share that link with students in Google Classroom.
-
-### Option B: School Web Server or LMS Hosting
-You can upload the contents of the `dist/` directory directly to any school static host, Google Sites, or LMS (Canvas, Schoology, Blackboard). `index.html` sits at the root; all asset paths are relative (`./`) so it runs cleanly from any subdirectory (e.g., `/apgov/bill-quest/`).
+4. Students navigate to that URL in Google Chrome on their Chromebook.
 
 ---
 
@@ -116,27 +131,27 @@ Draft legislation from **6 distinct policy provisions** across 3 policy levers, 
 
 ---
 
-## Local Development & Testing (For Teachers / Developers)
+## Building & Bundling (For Developers / Teachers)
 
-On a computer with Node.js 18 or newer installed:
+On a computer with Node.js 18+:
 
 ```sh
-# Run automated verification test suite (25 tests)
+# Run automated test suite (25 tests)
 npm test
 
-# Build the production release to dist/
+# Build production dist/ directory AND generate single-file offline bundles:
 npm run build
 
-# Start local preview server at http://127.0.0.1:4173/
+# Or generate only the offline standalone single-file bundles:
+npm run bundle
+
+# Local preview server at http://127.0.0.1:4173/
 npm run preview
 ```
 
-### Automated Test Suite Highlights
-- **Universal Route Reachability**: All 20 provision combinations across all 60 priority configurations have a viable pathway to enactment.
-- **Constitutional Thresholds**: Verified Rule XXII cloture (60 votes) vs. simple majority passage (51 votes), and 2/3 bicameral veto overrides.
-- **Adjournment Mechanics**: Validated sine die session tick expiration under Article I and the 20th Amendment.
-- **World Pathfinding**: All 7 chambers verified for obstacle-free entry tiles, collision detection, and reachable NPCs/doors.
-- **Air-Gap Static Contract**: Verified that the production build in `dist/` contains zero external runtime APIs or remote dependencies.
+When `npm run build` runs, it generates:
+1. `dist/` — 8-file clean static directory for web hosting.
+2. `bill-quest.html` & `play_offline.html` — Zero-dependency, single-file offline HTML bundles ready to share via Google Classroom or Google Drive.
 
 ---
 

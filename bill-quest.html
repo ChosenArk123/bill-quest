@@ -1,0 +1,2556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#132a2b"><meta name="description" content="Build a federal bill and navigate the institutions that can change it. An AP Government game.">
+<title>Bill Quest</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='7' y='3' width='18' height='26' fill='%23ebc374'/%3E%3Cpath d='M11 10h10M11 15h10M11 20h6' stroke='%23132a2b' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light;--ink:#183332;--muted:#596960;--paper:#f4f1e8;--line:#d9ddce;--gold:#e2b665;--green:#244d43;--red:#8e493b;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,a,summary,select{touch-action:manipulation}button{border:1px solid #bcc7b7;background:#fafaf3;color:var(--ink);padding:13px 18px;font-weight:700;cursor:pointer;border-radius:4px;line-height:1.35}button:hover{background:#e9eddf;border-color:var(--green)}button:disabled{opacity:.48;cursor:not-allowed}a{color:var(--green);text-underline-offset:4px}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #b06b16;outline-offset:4px}h1:focus{outline:none}p{line-height:1.65}h1,h2,h3,p{margin-top:0}h1{font-family:Georgia,serif;font-size:clamp(34px,4vw,57px);line-height:1.06;font-weight:500;letter-spacing:-1.7px;margin-bottom:20px}h2{font-family:Georgia,serif;font-size:29px;font-weight:500;letter-spacing:-.5px;margin-bottom:12px}h3{font-size:19px;line-height:1.3}small{font-size:11px}.skip{position:fixed;top:-100px;z-index:20;background:white;padding:15px}.skip:focus{top:10px}.topbar{max-width:1320px;margin:auto;padding:24px 42px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;gap:11px;align-items:center;text-decoration:none;font-size:16px;font-weight:900;letter-spacing:2px}.brand small{display:block;font-size:9px;letter-spacing:2.7px;margin-top:5px;font-weight:600}.brand-mark{font-size:30px;line-height:1}.top-actions{display:flex;gap:4px}.top-actions button{background:none;border-color:transparent;font-size:12px;padding:10px 12px}.top-actions button:hover{border-color:var(--line)}.journey{display:flex;max-width:1236px;margin:0 auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line);justify-content:space-between;gap:8px;padding:16px 0;font-size:11px;color:#7a8479}.journey span{white-space:nowrap}.journey b{font-size:10px;margin-right:6px;font-weight:normal;color:#9aa392}.journey .active{color:var(--ink);font-weight:bold}.journey .active b{background:var(--green);color:white;padding:5px}.journey .done{color:#506e5b}main{max-width:1320px;margin:auto;padding:36px 42px 45px}.builder-intro{display:grid;grid-template-columns:1fr .86fr;gap:36px;align-items:center;margin-bottom:36px}.eyebrow{font-family:Arial,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;line-height:1.5;color:#647561;margin-bottom:15px}.lede{font-size:16px;color:var(--muted);max-width:600px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chips span{font-size:10px;border:1px solid var(--line);padding:7px 9px;border-radius:3px}.scene-art{position:relative;height:235px;overflow:hidden;background:#183d3b;border:7px solid #e4e6d8;outline:1px solid #cdd4c4;box-shadow:5px 5px 0 #dce1d3;image-rendering:pixelated}.moon{position:absolute;width:35px;height:35px;right:65px;top:26px;background:#e8c980;box-shadow:7px 0 0 #e8c980,0 7px 0 #e8c980}.stars{position:absolute;top:24px;left:35px;color:#a7b9a4;font-size:25px;letter-spacing:24px}.capitol{position:absolute;width:215px;height:165px;left:14%;bottom:22px}.spire{width:4px;height:24px;position:absolute;left:105px;top:3px;background:#b7c2a7}.dome{position:absolute;width:70px;height:42px;left:73px;top:30px;background:repeating-linear-gradient(90deg,#afbaa0 0 10px,#8f9f89 10px 13px);clip-path:polygon(32% 0,68% 0,68% 12%,84% 12%,84% 28%,94% 28%,94% 55%,100% 55%,100% 100%,0 100%,0 55%,6% 55%,6% 28%,16% 28%,16% 12%,32% 12%)}.roof{position:absolute;top:70px;width:215px;height:30px;background:#c3c9b0;clip-path:polygon(50% 0,100% 75%,100% 100%,0 100%,0 75%)}.columns{position:absolute;top:100px;height:50px;left:12px;right:12px;background:repeating-linear-gradient(90deg,#b7c2aa 0 13px,#45645a 13px 27px)}.steps{position:absolute;top:149px;height:9px;left:0;right:0;background:#c4cbb5;box-shadow:0 8px 0 #9cae95}.land{position:absolute;bottom:21px;height:6px;left:0;right:0;background:#6b8972;box-shadow:0 6px 0 #345d4a}.bill-sprite{position:absolute;width:62px;height:78px;right:18%;bottom:33px;background:#f1d998;box-shadow:5px 0 #a78543,0 5px #a78543,-4px 0 #b49357,0 -4px #ffe6aa;transform:rotate(5deg)}.fold{position:absolute;right:0;width:14px;height:15px;background:#b99951;clip-path:polygon(0 0,100% 100%,0 100%)}.bill-eyes{font-size:22px;letter-spacing:7px;margin:9px 0 0 15px}.bill-line{height:4px;background:#b79d60;margin:6px 10px}.bill-line.short{width:25px}.bill-sprite>span{position:absolute;bottom:6px;right:7px;font:9px monospace;color:#735a2e}.art-label{position:absolute;bottom:7px;left:15px;font:8px monospace;letter-spacing:1px;color:#c4d1b7}.art-label span{color:#ddbd7c}.workspace{border-top:1px solid var(--line);padding-top:27px}.builder-heading{display:flex;justify-content:space-between;gap:20px;align-items:center}.builder-heading .eyebrow{margin-bottom:7px}.builder-heading p:not(.eyebrow){font-size:13px;color:var(--muted);margin-bottom:18px}.count{font-size:10px;letter-spacing:1px;font-weight:bold;white-space:nowrap;border:1px solid var(--line);padding:10px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.provision{text-align:left;display:flex;flex-direction:column;background:#f9f8f1;padding:18px;border:1px solid #d5d8c9;position:relative;font-weight:normal;box-shadow:0 3px 0 #e4e6d9;transition:transform .15s,background .15s}.provision:hover{transform:translateY(-3px)}.provision.selected{border:2px solid #3e6552;padding:17px;background:#edf0e2}.card-top{display:flex;width:100%;align-items:center;justify-content:space-between;margin-bottom:19px}.card-icon{font-size:27px;color:#567250}.check{border:1px solid #b7c3ae;width:21px;height:21px;display:grid;place-items:center;font-size:12px}.selected .check{background:var(--green);color:white;border-color:var(--green)}.card-number{font-size:9px;letter-spacing:1.3px;color:#6c7c65;margin-bottom:9px}.provision strong{font-family:Georgia,serif;font-size:21px;line-height:1.12;margin-bottom:13px;font-weight:500}.card-copy{font-size:12px;line-height:1.65;margin-bottom:15px}.card-reason{border-top:1px solid #d1d9c6;padding-top:12px;margin-top:auto;font-size:10px;line-height:1.6;color:#5d6d57}.hint{font-size:11px;color:var(--muted);line-height:1.6;margin:14px 0}.draft-footer{display:flex;align-items:end;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:21px}.draft-footer label{font-size:11px;font-weight:bold;min-width:240px}select{display:block;margin-top:8px;width:100%;padding:12px;background:#fafaf3;border:1px solid #b9c5b2;color:var(--ink);border-radius:3px;font-size:12px}.basis{display:flex;flex-direction:column;font-size:11px;gap:7px;margin-bottom:5px;max-width:260px;line-height:1.5}.basis span{color:var(--muted)}.primary{background:var(--green);border-color:var(--green);color:#faf5dd;box-shadow:0 3px 0 #142f27}.primary:hover{background:#35644f;color:white}.primary span{padding-left:18px}.disclosure{font-size:12px;margin-top:27px;color:var(--muted)}summary{cursor:pointer;line-height:1.5}details p{font-size:12px}footer{max-width:1236px;margin:auto;border-top:1px solid var(--line);padding:20px 0 28px;display:flex;gap:20px;justify-content:space-between;font-size:9px;letter-spacing:.4px;color:#74816d}.play-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:36px;align-items:start}.encounter{background:#fbfaf5;border:1px solid var(--line);padding:32px}.encounter-banner{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:1px;color:#7c896e;margin-bottom:33px}.tag{display:inline-block;font-size:9px;font-weight:bold;letter-spacing:1px;border:1px solid #b7c3ad;background:#e9eedf;color:#496044;padding:5px 7px;white-space:nowrap}.actor{font-size:12px;color:#607454;letter-spacing:.5px}.encounter h1{font-size:42px;max-width:650px}.encounter-copy{font-size:15px;max-width:740px;margin-bottom:28px}.proposal{background:#eef1e6;border:1px solid #d4ddc8;padding:22px;margin-bottom:22px}.proposal .eyebrow{font-size:9px}.redline{display:grid;grid-template-columns:1fr 1fr;gap:20px}.redline>div+div{border-left:1px solid #bdcdb4;padding-left:20px}.redline span{font-size:9px;font-weight:bold;letter-spacing:1px}.redline p{font-size:13px;margin:8px 0}.trade{font-size:12px;font-weight:bold;margin-top:15px;margin-bottom:0}.choice-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.choices{display:flex;flex-direction:column;align-items:stretch;gap:12px}.choices button{text-align:left}.lesson{margin-top:30px;padding-top:23px;border-top:1px solid var(--line)}.lesson>span{font-size:9px;font-weight:bold;letter-spacing:2px}.lesson p{font-size:13px;margin:10px 0}.text-button{background:none;border:none;padding:8px 0;font-size:12px;color:#456846;box-shadow:none}.text-button:hover{background:none;text-decoration:underline}.bill-summary{padding:22px;background:#e9edde;border:1px solid #d5ddc8}.bill-summary .eyebrow{font-size:9px;margin-bottom:10px}.bill-summary h3{font-family:Georgia,serif;font-size:23px;font-weight:500}.bill-summary ul{list-style:none;margin:0;padding:0}.bill-summary li{border-top:1px solid #cdd8c1;display:flex;align-items:center;gap:12px;padding:13px 0;font-size:12px;line-height:1.4}.bill-summary small{display:block;font-size:8px;letter-spacing:1px;color:#647758;margin-top:5px}.mini-icon{font-size:22px}.forecast{padding:20px 0;border-bottom:1px solid var(--line)}.forecast-top{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;font-weight:bold}.forecast .tag{font-size:7px}.forecast-value{margin:12px 0;display:flex;align-items:baseline;gap:8px}.forecast-value strong{font-family:Georgia,serif;font-size:40px;font-weight:500}.forecast-value>span{font-size:11px;color:var(--muted)}.meter{height:10px;background:#dde3d5;position:relative}.meter>div{height:100%;background:#718b58}.meter i{height:18px;top:-4px;position:absolute;width:2px;background:#9b641c}.forecast-verdict{font-size:11px;margin:10px 0}.forecast details{font-size:11px}.factor{display:flex;justify-content:space-between;gap:12px;margin:10px 0}.clock{padding:20px 0;font-size:12px}.clock small{display:block;margin-top:7px;font-size:8px;color:var(--muted)}.comparison{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px 0}.comparison article{padding:18px;background:#f1f1e8;border:1px solid #d9dfd0;margin-bottom:10px}.comparison article.changed{border-left:3px solid #a57630;background:#f5efdc}.comparison strong{font-size:13px;display:block}.comparison p{font-size:12px;margin:8px 0 0}.status{font-size:8px;color:#846021;letter-spacing:1px;display:block;margin-bottom:8px}.ending{max-width:1000px;margin:auto}.result-stats{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;gap:50px}.result-stats div{display:flex;flex-direction:column;gap:8px}.result-stats strong{font:29px Georgia,serif}.result-stats span{font-size:11px}.analysis-box{background:#e5ecda;border:1px solid #c9d6ba;padding:28px;margin:30px 0}.analysis-box p{font-size:14px}.feedback{padding:18px;border-left:3px solid #3e6e4c;margin-top:18px;background:#f6f8ed;font-size:13px;line-height:1.6}.danger-text{color:var(--red)}dialog{color:var(--ink);background:var(--paper);border:1px solid #7f9874;max-width:850px;width:calc(100% - 40px);max-height:85vh;padding:0;box-shadow:10px 10px 0 #122d2955}dialog::backdrop{background:#102f2bdd;backdrop-filter:blur(3px)}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 28px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:1}.dialog-head h2{margin:0;font-size:26px}.dialog-body{padding:25px 28px;line-height:1.6}.dialog-body>p{font-size:15px}.source{padding:20px 0;border-bottom:1px solid var(--line)}.source:first-child{padding-top:0}.source h3{margin:12px 0}.source p{font-size:14px}.source a{font-size:12px}.history{padding-left:23px}.history li{padding:10px 0;font-size:12px}.history p{margin:6px 0}.dialog-body dt{font-weight:bold;margin:18px 0 6px}.dialog-body dd{margin:0;font-size:14px}.setting{display:flex;gap:12px;align-items:center}.setting input{width:20px;height:20px}.reduce-motion *{transition:none!important;animation:none!important;scroll-behavior:auto!important}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}@media(max-width:1100px){.topbar{padding:20px 26px}.journey{margin:0 26px;font-size:10px}main{padding:30px 26px}footer{margin:0 26px}.cards{gap:10px}.provision{padding:14px}.provision.selected{padding:13px}.provision strong{font-size:19px}.builder-intro{gap:25px}.basis{display:none}.play-layout{gap:22px;grid-template-columns:minmax(0,1fr) 240px}.encounter{padding:25px}.encounter h1{font-size:36px}}@media(max-width:760px){.topbar{align-items:start;gap:12px;padding:18px}.top-actions{flex-wrap:wrap;justify-content:end;max-width:220px}.top-actions button{padding:5px 8px}.brand{font-size:13px}.brand small{font-size:7px}.journey{margin:0 18px;overflow:auto;justify-content:flex-start;gap:18px;padding:15px 3px}main{padding:25px 18px}.builder-intro{grid-template-columns:1fr}.scene-art{height:180px;display:none}.cards{grid-template-columns:1fr 1fr}.provision strong{font-size:20px}.builder-heading{align-items:start}.count{font-size:8px;padding:8px}.builder-heading h2{font-size:25px}.draft-footer{align-items:stretch;flex-direction:column}.draft-footer label{min-width:0}.play-layout{display:flex;flex-direction:column}.encounter{width:100%;padding:23px}.sidebar{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:18px}.bill-summary{grid-row:span 2}.encounter h1{font-size:35px}.redline{gap:12px}.redline>div+div{padding-left:12px}.result-stats{gap:20px;flex-wrap:wrap}.result-stats strong{font-size:23px}footer{flex-wrap:wrap;margin:0 18px;gap:10px}.comparison{gap:10px}.comparison article{padding:12px}.dialog-head{padding:18px}.dialog-body{padding:18px}.dialog-head h2{font-size:22px}.analysis-box{padding:20px}}@media(max-width:420px){.cards,.sidebar,.redline,.comparison{grid-template-columns:1fr}.redline>div+div{padding:12px 0 0;border-left:0;border-top:1px solid var(--line)}.provision strong{font-size:22px}.card-top{margin-bottom:10px}.builder-heading{display:block}.count{display:inline-block;margin-bottom:16px}}
+.whitehouse-note{font-size:11px;padding:17px 0;border-bottom:1px solid var(--line)}.whitehouse-note p{font-size:11px;margin:8px 0 0;color:var(--muted)}
+/* Exploration shell: the room is the primary interface. */
+body{background:#101e29;color:#efe6cd}.world-header{max-width:1220px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 28px;border-bottom:1px solid #34414a}.world-header .brand{color:#e6d4a9}.world-header .top-actions button{color:#e0d9c4;font-size:11px}.world-header .top-actions button:hover{background:#293d48}.world-main{max-width:1120px;margin:auto;padding:21px 28px}.room-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.room-heading h1{font:28px Georgia,serif;letter-spacing:0;margin-bottom:12px}.room-heading .eyebrow{font-size:9px;color:#a6b4ae;margin-bottom:6px}.world-clock{text-align:right;font:11px monospace;letter-spacing:1px;color:#dfc58b}.world-clock small{display:block;font:9px Arial,sans-serif;letter-spacing:0;margin-top:6px;color:#b1bdb7}.world-clock .ticks-badge{display:inline-flex;align-items:center;gap:4px;background:#172b38;border:1px solid #374a54;border-radius:3px;font:10px Arial,sans-serif;letter-spacing:0;margin-top:5px;color:#c2cec8;padding:3px 8px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}.world-clock .ticks-badge:hover{background:#233c4d;border-color:#e0cb95;color:#f3e9cf}.tick-explainer .lede{font-size:14px;line-height:1.5;margin-bottom:12px;color:#213a48}.tick-explainer h3{font-size:14px;color:#213a48;margin:16px 0 6px}.tick-explainer ul{margin:8px 0 14px 20px;padding:0}.tick-explainer li{margin-bottom:8px;line-height:1.45;color:#2b4242}.world-objective{display:flex;gap:12px;align-items:center;margin:0 0 13px;font-size:12px;color:#e2d2aa}.world-objective p{margin:0}.world-objective>span{color:#c5a45c}.world-frame{position:relative;border:3px solid #59646a;box-shadow:0 0 0 1px #0c1520,0 12px 34px #0005;background:#101c27;max-width:960px;margin:auto}.world-frame canvas{width:100%;height:auto;display:block;image-rendering:auto;cursor:crosshair;outline-offset:5px;aspect-ratio:24/15}.location-tag{position:absolute;bottom:11px;left:14px;font:8px monospace;letter-spacing:2px;pointer-events:none;color:#c9d4c8;background:#112530c9;padding:6px 9px}.exploration-bar{max-width:960px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px auto 0;font-size:12px}.exploration-bar p{margin:0;color:#d0d8cb}.exploration-bar button{background:#d8c28d;color:#223641;border-color:#e6d3a1;font-size:11px;padding:10px 18px}.walk-help{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:17px 0;font:9px monospace;color:#c6b78b}.walk-help b{font:10px Arial,sans-serif;color:#91a4a6;margin-left:5px}.destinations{max-width:960px;margin:auto;font-size:11px;color:#bac7c4;border-top:1px solid #3a484e;padding:13px 0}.destinations summary{font-size:11px}.destinations>div{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.destinations button{font-size:11px;background:#243944;border-color:#496069;color:#e1ddc7;padding:10px}.world-footnote{font-size:9px;color:#8c9fa3;text-align:center;margin:8px 0}.world-header a:focus-visible,.world-main :focus-visible{outline:3px solid #edcc7c;outline-offset:3px}dialog{color:#243b3b;background:#f4f0e3;max-height:88vh;box-shadow:0 0 0 5px #253b47,0 0 0 7px #baaa7b,0 16px 80px #0008;border:2px solid #d2be83;border-radius:3px}dialog::backdrop{background:#07121dc0;backdrop-filter:blur(1px)}.conversation-dialog{max-width:810px;margin:auto auto 4vh}.conversation-dialog::backdrop{background:#07121d66;backdrop-filter:none}.conversation-dialog .dialog-head{background:#253b47;color:#eadbb5;border:0;padding:14px 22px}.conversation-dialog .dialog-head h2{font:14px Arial,sans-serif;font-weight:bold;letter-spacing:.5px}.conversation-dialog .dialog-head button{background:none;color:#d5d8ca;border:1px solid #60777b;font-size:10px;padding:7px 10px}.conversation-dialog .dialog-body{padding:22px}.conversation{display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:start}.portrait{background:#304b54;color:#dfc68e;font:50px monospace;text-align:center;border:3px solid #ad9b6a;box-shadow:3px 3px 0 #cdbd92;image-rendering:pixelated}.dialogue-beat{font-size:18px;line-height:1.6;margin:0;min-height:64px}.beat-count{font:10px monospace;color:#7d856f;display:block;text-align:right;margin-top:7px}.dialogue-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:18px}.dialogue-actions button{font-size:12px}.major-encounter{max-width:840px;animation:encounter-in .25s ease-out}.major-encounter .dialog-head{background:#263f4b;color:#ead9ad}.major-encounter .dialog-head h2{font:13px Arial,sans-serif;letter-spacing:1px}.encounter-intro h2{margin-top:15px}.dual-forecast{display:grid;grid-template-columns:1fr 1fr;gap:24px}.decision-dialog .dialog-head h2{font-size:20px}.dialog-body .builder-intro{display:none}.dialog-body .workspace{border:0;padding:0}.dialog-body .cards{grid-template-columns:1fr 1fr}.dialog-body .draft-footer{flex-wrap:wrap}.dialog-body .basis{display:none}.dialog-body .ending h1{font-size:36px}.dialog-body .encounter-intro+.forecast{margin-bottom:25px}.major-encounter .forecast-value{justify-content:center}.major-encounter .forecast-value strong{font-size:60px}@keyframes encounter-in{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:none}}@media(min-width:1000px) and (max-height:850px){.world-main{max-width:930px;padding-top:14px}.world-frame{max-width:730px}.exploration-bar{max-width:730px}.room-heading h1{font-size:23px}.world-header{padding-top:11px;padding-bottom:11px}.walk-help{margin:12px 0}.world-objective{margin-bottom:10px}}@media(max-width:760px){.world-header{padding:14px 16px}.world-main{padding:18px 14px}.room-heading h1{font-size:24px}.world-clock{font-size:9px}.walk-help{gap:10px}.dialogue-beat{font-size:16px}.conversation{grid-template-columns:42px 1fr;gap:14px}.portrait{font-size:34px}.dialog-body .cards{grid-template-columns:1fr}.dialogue-actions{flex-wrap:wrap}.conversation-dialog{width:calc(100% - 24px)}.world-objective{font-size:11px}.dual-forecast{gap:15px}.location-tag{font-size:6px}}
+.portrait{height:70px;position:relative;overflow:hidden}.portrait-head{position:absolute;width:24px;height:28px;top:10px;left:13px;background:#cfa984;border-top:7px solid #4a3b38;box-shadow:3px 0 #9a735c}.portrait-head::before,.portrait-head::after{content:'';position:absolute;width:3px;height:3px;background:#283b40;top:8px}.portrait-head::before{left:4px}.portrait-head::after{right:4px}.portrait-body{position:absolute;top:40px;left:6px;width:40px;height:25px;background:#829795;border-top:5px solid #c3b792}@media(max-width:760px){.portrait-head{left:6px;width:20px}.portrait-body{left:2px;width:31px}}
+
+/* Roll call tally & vote ceremony */
+.rollcall-dialog{max-width:680px;background:#fbf9f2}
+.rollcall-wrap{text-align:center;padding:10px 0}
+.rollcall-badge{display:inline-block;font:bold 10px monospace;letter-spacing:1.5px;background:#253b47;color:#eedca4;padding:6px 14px;border-radius:3px;margin-bottom:12px}
+.rollcall-title{font:26px Georgia,serif;color:#1a2f2e;margin:0 0 6px}
+.rollcall-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.tally-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.tally-box{padding:16px;border-radius:4px;border:2px solid;background:#fff}
+.tally-box.yea{border-color:#2b704c;background:#f0f7f2}
+.tally-box.nay{border-color:#9c3c2b;background:#fbf2f0}
+.tally-label{display:block;font:bold 11px monospace;letter-spacing:2px;margin-bottom:4px}
+.tally-box.yea .tally-label{color:#215c3d}
+.tally-box.nay .tally-label{color:#852b1b}
+.tally-box strong{font:44px Georgia,serif;display:block;line-height:1}
+.tally-box.yea strong{color:#1e5c3b}
+.tally-box.nay strong{color:#8c2e1f}
+.tally-needed{font-size:11px;color:var(--muted);margin-top:6px;display:block}
+.roll-meter-wrap{position:relative;height:16px;background:#e2e6db;border-radius:3px;overflow:visible;margin:25px 0 15px}
+.roll-meter-fill{height:100%;background:#3e7b57;border-radius:3px 0 0 3px;transition:width 0.1s linear}
+.roll-threshold-marker{position:absolute;top:-6px;bottom:-6px;width:3px;background:#b58024;transform:translateX(-50%);z-index:2}
+.roll-threshold-label{position:absolute;top:-20px;transform:translateX(-50%);font:bold 9px monospace;letter-spacing:1px;color:#8c6017;white-space:nowrap}
+.roll-stamp-wrap{margin:24px 0 16px;animation:stamp-pop 0.35s cubic-bezier(0.175,0.885,0.32,1.275)}
+.roll-stamp{display:inline-block;font:900 24px monospace;letter-spacing:3px;padding:8px 24px;border:4px solid;border-radius:4px;transform:rotate(-3deg);text-transform:uppercase}
+.roll-stamp.stamp-pass{color:#1e6940;border-color:#1e6940;background:#edf7f0;box-shadow:0 0 0 3px #1e694040}
+.roll-stamp.stamp-fail{color:#9c2e22;border-color:#9c2e22;background:#fdf1ef;box-shadow:0 0 0 3px #9c2e2240}
+.roll-summary{font-size:13px;color:var(--ink);margin-top:14px;line-height:1.5}
+
+/* Enactment & Resolution Ceremonies */
+.ceremony{text-align:center;padding:10px 15px}
+.ceremony-badge{display:inline-block;font:bold 9px monospace;letter-spacing:2px;background:#1c303d;color:#e4d39e;padding:6px 14px;border-radius:3px;margin-bottom:15px}
+.ceremony h1{font:32px Georgia,serif;margin-bottom:8px;color:#15282a}
+.ceremony-sub{font-size:14px;color:var(--muted);max-width:580px;margin:0 auto 20px}
+.ceremony-parchment{background:#fffdf5;border:3px double #c9b986;box-shadow:0 4px 14px rgba(0,0,0,0.08);padding:24px 30px;text-align:left;margin:20px auto;max-width:620px;position:relative}
+.parchment-header{border-bottom:1px solid #dfd4af;padding-bottom:14px;margin-bottom:14px;text-align:center}
+.parchment-header span{display:block;font:bold 9px monospace;letter-spacing:1.5px;color:#7d6b42;margin-bottom:4px}
+.parchment-header strong{display:block;font:24px Georgia,serif;letter-spacing:1px;color:#213334}
+.parchment-header em{display:block;font-size:12px;color:#5d6756;font-style:italic;margin-top:4px}
+.parchment-body p{font-size:13px;line-height:1.6;color:#243534;margin:8px 0}
+.parchment-sign{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #dfd4af;padding-top:18px;margin-top:20px}
+.sign-seal{font:bold 9px monospace;letter-spacing:1px;color:#a44832;border:2px solid #b54a33;padding:8px 12px;border-radius:50%;display:inline-block}
+.sign-line{text-align:right;border-top:1px solid #233433;padding-top:4px;min-width:190px}
+.sign-signature{display:block;font-family:Georgia,serif;font-style:italic;font-size:18px;color:#1e3545}
+.sign-line small{font:bold 8px monospace;letter-spacing:1px;color:#6a7c73}
+
+.autopsy-box{background:#fcf4f2;border:1px solid #e0c2bc;border-left:4px solid #ad3526;padding:18px 22px;margin:20px 0;text-align:left}
+.autopsy-box h3{font:bold 14px Georgia,serif;color:#8c2518;margin:0 0 8px}
+.autopsy-box p{font-size:13px;line-height:1.55;color:#382c2a;margin:6px 0}
+.autopsy-point{margin:10px 0}
+.autopsy-point strong{display:block;font-size:11px;letter-spacing:1px;color:#7a281e;margin-bottom:3px}
+.autopsy-point span{font-size:13px;color:#2e363b}
+
+.chamber-banner{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#243a46;color:#eedfa4;font:bold 10px monospace;letter-spacing:1.5px;border-radius:3px;margin-bottom:15px}
+.chamber-banner.chamber-committee{background:#453724;color:#f0dca2}
+.chamber-banner.chamber-house{background:#1e3c4d;color:#d8e8f2}
+.chamber-banner.chamber-senate{background:#45283b;color:#f0d8e8}
+.chamber-banner.chamber-agreement{background:#38452e;color:#e8f0d8}
+.chamber-banner.chamber-executive{background:#182e38;color:#e8dcb8}
+
+.hidden{display:none!important}
+@keyframes stamp-pop{0%{transform:scale(1.6) rotate(-10deg);opacity:0}70%{transform:scale(0.95) rotate(-2deg);opacity:1}100%{transform:scale(1) rotate(-3deg)}}
+@media(max-width:540px){.tally-grid{grid-template-columns:1fr;gap:12px}.parchment-sign{flex-direction:column;align-items:center;gap:16px}.sign-line{text-align:center}.roll-stamp{font-size:18px;padding:6px 16px}}
+
+</style>
+<script>
+(() => {
+// --- dialogue.js ---
+// Required conversations explain institutional rules with authentic character voices.
+const conversations = {
+  referral: { speaker: 'Referral clerk', beats: [
+    'H.R. SIM-1 is officially on the docket. The sponsor dropped it in the hopper, and we have preserved the original text right here in your bill file so every future amendment can be tracked.',
+    'Next stop: the communications committee. Under House procedure, the Speaker refers the bill based on formal advice from the Parliamentarian, matching the bill’s subject to committee jurisdiction.',
+    'Because your bill touches interstate communications, Article I, Section 8 provides authority. Note that while bills can start in the Senate, the Origination Clause requires revenue measures to start right here in the House.'
+  ] },
+  committee: { speaker: 'Committee chair', beats: [
+    'Welcome to my committee room. As chair, I determine our agenda—hundreds of bills land on my desk every term and die quietly without ever receiving a hearing.',
+    'I granted your bill a hearing because emergency alerts save lives. But a municipal operator testified earlier that small local systems simply don’t have the funding to upgrade immediately.',
+    'My subcommittee drafted a compromise amendment. We’ll debate it here in full committee markup before deciding whether to report the bill to the House floor.'
+  ] },
+  markup: { speaker: 'Committee chair', beats: [
+    'The committee will come to order for markup. This is where members offer specific textual amendments and battle over policy language.',
+    'Here is the first proposed amendment. Review the changes carefully, especially if it alters the core provision you promised your coalition.',
+    'In markup, competing economic and regional factions will always push their own interests—the very dynamic Madison described in Federalist 10. Our job is hammering out a workable coalition.'
+  ] },
+  report: { speaker: 'Committee clerk', beats: [
+    'The amendment period is closed. The question now before the full committee is whether to order H.R. SIM-1 favorably reported.',
+    'Under our rules, this committee has 25 members, and all 25 will vote today. To report the bill out, you must secure 13 votes.',
+    'Reporting the bill places it on the House Union Calendar. But remember: getting on the calendar does not guarantee floor consideration. That decision belongs to party leadership.'
+  ] },
+  houseRule: { speaker: 'House leadership aide', beats: [
+    'Listen quickly: leadership wants this bill on the floor, but first we must pass a special rule from the Rules Committee to govern debate.',
+    'The Rules Committee shaped a structured rule allowing only two specific amendments. Someone tried offering an unrelated school-uniform rider, but it was ruled out of order for lacking germaneness.',
+    'Article I, Section 5 allows each chamber to set its own rules. Unlike the Senate’s open debate, the House relies on special rules or suspension to manage 435 members efficiently.'
+  ] },
+  houseAmend: { speaker: 'Representative Vale', beats: [
+    'I support modernizing alerts for my suburban commuters, but colleagues from rural districts worry about the compliance timeline for their local utilities.',
+    'Under the structured rule, we can debate this single substantive amendment. The other filed amendment was noncontroversial and withdrawn.',
+    'Will your supporters back this amendment or defend the existing text? Your choice will shape how my colleagues cast their votes on final passage.'
+  ] },
+  houseVote: { speaker: 'House clerk', beats: [
+    'The House is assembled for final passage. Members have heard from their districts on both public safety benefits and financial burdens.',
+    'Article I passage requires a majority of members present and voting. In our simulation, all 435 seats vote, making 218 the constitutional target.',
+    'If the yeas prevail, the clerk will engross this version and transmit it to the Senate. If not, the bill dies on the floor.'
+  ] },
+  senateAmend: { speaker: 'Senate committee staffer', beats: [
+    'H.R. SIM-1 has arrived from the House. Every senator here represents an entire state, which brings distinct regional challenges to the table.',
+    'Passing the House gives a bill zero guarantee over here. The Senate is an independent chamber, and our committee has its own distinct priorities before anything reaches the floor.',
+    'Our senators drafted an amendment addressing rural broadband carriers. Adopting it will mean the House and Senate texts no longer match.'
+  ] },
+  senateRoute: { speaker: 'Senator Rowan', beats: [
+    'I am sympathetic to this policy, but in the United States Senate, every individual member holds significant leverage over floor scheduling.',
+    'Look at your forecasts: one shows support for passage, but the other shows whether senators will vote to limit debate. Those are two entirely separate tests.',
+    'A unanimous consent agreement can schedule a final vote quickly, provided no senator objects. If someone holds the bill, sponsors must file for cloture.'
+  ] },
+  cloture: { speaker: 'Senate parliamentarian', beats: [
+    'A cloture petition signed by sixteen senators has been filed under Senate Rule XXII. A mandatory procedural waiting period applies before a vote can occur, consuming valuable legislative time.',
+    'On ordinary legislation, invoking cloture requires three-fifths of all senators duly chosen and sworn—a rigid 60 votes out of 100.',
+    'Cloture merely cuts off the filibuster and limits debate to thirty hours. It is not final passage; the Senate must still hold an independent vote on the bill itself.'
+  ] },
+  senateVote: { speaker: 'Senate clerk', beats: [
+    'The Senate proceeds to the question of passage. With all 100 senators participating, 51 affirmative votes are required to pass.',
+    'Remember that passage requires a simple majority (51 votes here), whereas cloture required three-fifths (60 votes) to limit debate. If approved, we will compare this Senate engrossment with the House version.'
+  ] },
+  reconcile: { speaker: 'Bicameral clerk', beats: [
+    'Both the House and Senate have voted yes. But under the bicameral concurrence requirement of Article I, Sections 1 and 7, Congress cannot present differing texts to the President.',
+    'Even minor differences must be resolved. Congress often uses an amendment exchange—sending amendments between the chambers—or convenes a formal conference committee.',
+    'Here are the two approved versions side by side. We will resolve this through amendment exchange, sending one unified proposal for chamber approval.'
+  ] },
+  houseConcur: { speaker: 'House clerk', beats: [
+    'The Senate has returned our bill with modified language. Under Article I, the House must vote to concur in the Senate amendment before it can become law.',
+    'Members will now vote on whether to accept this compromised wording or insist on their original version.'
+  ] },
+  senateConcur: { speaker: 'Senate clerk', beats: [
+    'The House has agreed to a final compromise package. The Senate must now vote on whether to concur in the House amendment.',
+    'By prior consent agreement, this final concurrence vote is scheduled without delay. The identical text must be ratified.'
+  ] },
+  president: { speaker: 'Executive staffer', beats: [
+    'Welcome to the Executive Office. Both chambers have formally enrolled identical text and presented it to the President pursuant to Article I, Section 7.',
+    'The President evaluates the entire enrolled bill together—there is no line-item veto. Our administration balances rapid public alert safety against compliance costs for rural infrastructure.',
+    'If the bill aligns with administration priorities, the President signs it into law. If not, the President returns it with objections for a regular veto.'
+  ] },
+  overrideHouse: { speaker: 'House clerk', beats: [
+    'The President has vetoed H.R. SIM-1 and returned it with objections to the House, where the bill originated as required by the Constitution.',
+    'We cannot amend the text during an override. We must vote on the enrolled bill as returned, requiring two-thirds of voting members—290 votes.',
+    'If the House achieves two-thirds, the bill and objections move immediately to the Senate for their reconsideration.'
+  ] },
+  overrideSenate: { speaker: 'Senate clerk', beats: [
+    'The House has successfully voted to override the executive veto. The constitutional question now recurs to the Senate: shall the bill become law, the President’s objections notwithstanding?',
+    'The text is completely frozen. Overriding requires two-thirds of the Senate—67 votes out of 100. If we reach 67, the bill becomes public law immediately.'
+  ] }
+};
+
+// --- content.js ---
+const cards = {
+  "standard": {
+    "name": "National accessibility standard",
+    "icon": "◈",
+    "reason": "People who need accessible alerts gain a nationwide standard. Providers worry about the work needed to meet it.",
+    "versions": [
+      "FCC must establish minimum visual, audio, and assistive-technology standards for interstate emergency alerts.",
+      "FCC must establish accessibility standards with phased compliance for small providers."
+    ],
+    "effects": [
+      [
+        10,
+        3,
+        2,
+        3
+      ],
+      [
+        14,
+        5,
+        5,
+        1
+      ]
+    ],
+    "trade": "Smaller providers get more time to adjust. People who need accessible alerts have to wait longer."
+  },
+  "grants": {
+    "name": "Upgrade grants",
+    "icon": "▦",
+    "reason": "State and local officials welcome help paying for upgrades. Other lawmakers worry about the federal bill.",
+    "versions": [
+      "Authorize $600 million in grants for state and local emergency-alert upgrades.",
+      "Authorize $300 million in targeted grants, prioritizing systems with the greatest technical need."
+    ],
+    "effects": [
+      [
+        18,
+        6,
+        4,
+        -3
+      ],
+      [
+        12,
+        7,
+        7,
+        2
+      ]
+    ],
+    "trade": "The smaller grant program costs less, but it leaves fewer systems with funding."
+  },
+  "deadline": {
+    "name": "Two-year deadline",
+    "icon": "◷",
+    "reason": "People would get better alerts sooner. Small providers may struggle to finish the work in time.",
+    "versions": [
+      "Require covered emergency-alert upgrades within two years.",
+      "Require covered emergency-alert upgrades within four years, with annual progress reports."
+    ],
+    "effects": [
+      [
+        -8,
+        -3,
+        -5,
+        -2
+      ],
+      [
+        8,
+        6,
+        8,
+        2
+      ]
+    ],
+    "trade": "Providers have more time to finish the upgrades. People wait two more years for the improvements."
+  },
+  "waiver": {
+    "name": "Hardship waiver",
+    "icon": "◇",
+    "reason": "Rural providers get extra time when technical problems get in the way. Some communities will receive improvements later.",
+    "versions": [
+      "Permit temporary hardship waivers of up to two years for documented technical barriers.",
+      "Limit hardship waivers to one year and require a public corrective-action plan."
+    ],
+    "effects": [
+      [
+        10,
+        4,
+        4,
+        1
+      ],
+      [
+        8,
+        3,
+        2,
+        3
+      ]
+    ],
+    "trade": "Providers have less time to fix technical problems, but fewer people are left waiting for better alerts."
+  },
+  "preemption": {
+    "name": "State preemption standard",
+    "icon": "⚖",
+    "reason": "Under the Supremacy Clause of Article VI, valid federal alert rules displace conflicting state requirements. However, states invoke Tenth Amendment police powers to protect local emergency authority.",
+    "versions": [
+      "Federal accessibility rules preempt state and local emergency-alert requirements to ensure national uniformity.",
+      "Federal rules establish a regulatory floor, allowing states to enforce additional emergency-alert protections."
+    ],
+    "effects": [
+      [
+        12,
+        1,
+        0,
+        2
+      ],
+      [
+        6,
+        5,
+        5,
+        1
+      ]
+    ],
+    "trade": "National preemption ensures uniformity under Article VI, but preserving state standards respects state regulatory authority under the Tenth Amendment."
+  },
+  "penalties": {
+    "name": "FCC enforcement penalties",
+    "icon": "§",
+    "reason": "Strict monetary fines compel rapid compliance. Telecommunications carriers warn penalties could bankrupt small systems.",
+    "versions": [
+      "Authorize FCC civil penalties of up to $25,000 per violation for unaddressed emergency-alert failures.",
+      "Direct FCC to offer compliance counseling and a 60-day cure period before issuing financial penalties."
+    ],
+    "effects": [
+      [
+        6,
+        2,
+        1,
+        3
+      ],
+      [
+        10,
+        5,
+        4,
+        1
+      ]
+    ],
+    "trade": "A cure period gives struggling operators time to fix defects, but delays accountability for willful noncompliance."
+  }
+};
+const sources = {
+  "powers": {
+    "title": "Article I, Section 8",
+    "tag": "CONSTITUTION",
+    "text": "Article I, Section 8 lists Congress’s powers. This bill deals with communications across state lines, so it draws on the Commerce Clause and the Necessary and Proper Clause.",
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "procedure": {
+    "title": "Congressional legislative process",
+    "tag": "PRACTICE",
+    "text": "A referral sends a bill to the committee responsible for its subject. The committee may hear testimony and work on the text, but it can also leave the bill waiting. Leaders decide which bills get floor time. This game follows one possible route.",
+    "url": "https://www.congress.gov/legislative-process"
+  },
+  "rules": {
+    "title": "Article I, Section 5 · House special rules",
+    "tag": "HOUSE RULE",
+    "text": "Article I, Section 5 lets each chamber set its rules. Under a structured House rule, only specified amendments can be considered. Open rules allow more amendments; closed rules generally allow none.",
+    "url": "https://rules.house.gov/about/special-rule-types"
+  },
+  "cloture": {
+    "title": "Senate Rule XXII · Cloture",
+    "tag": "SENATE RULE",
+    "text": "For ordinary legislation, cloture normally takes three-fifths of senators duly chosen and sworn. It limits debate, but passage still needs its own vote. A consent agreement may let senators reach that vote without cloture.",
+    "url": "https://www.senate.gov/about/powers-procedures/filibusters-cloture/overview.htm"
+  },
+  "concurrence": {
+    "title": "Article I, Sections 1 and 7",
+    "tag": "CONSTITUTION",
+    "text": "Both chambers must approve exactly the same bill before it goes to the president. If the Senate changes the House version, those differences have to be settled first.",
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "veto": {
+    "title": "Article I, Section 7 · Presentment",
+    "tag": "CONSTITUTION",
+    "text": "The president can sign the whole bill or return it with objections. Congress can override a returned veto with two-thirds voting in each chamber, with a quorum. After ten days, excluding Sundays, an unsigned bill becomes law unless an adjournment prevents its return.",
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "faction": {
+    "title": "Federalist No. 10",
+    "tag": "FOUNDATIONAL ARGUMENT",
+    "text": "Madison describes how groups with different interests compete over public policy. You can see that in this bill: a deadline that helps people get alerts sooner can also worry the providers who must meet it.",
+    "url": "https://avalon.law.yale.edu/18th_century/fed10.asp"
+  },
+  "checks": {
+    "title": "Federalist No. 51",
+    "tag": "FOUNDATIONAL ARGUMENT",
+    "text": "Madison argues that divided powers help keep one part of government from taking control. Your bill needs agreement from several institutions. That gives more people a say, but it also gives them more chances to stop it.",
+    "url": "https://avalon.law.yale.edu/18th_century/fed51.asp"
+  },
+  "federalism": {
+    "title": "Article VI & Tenth Amendment · Preemption",
+    "tag": "CONSTITUTION",
+    "text": "Under the Supremacy Clause of Article VI, valid federal legislation overrides conflicting state laws. The Tenth Amendment frames the competing concern: powers not delegated to the federal government remain with the states, leading state officials to resist total federal displacement of local emergency alert standards.",
+    "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+  },
+  "calendar": {
+    "title": "Article I & 20th Amendment · Congressional Calendar",
+    "tag": "CONSTITUTION",
+    "text": "Under Article I and the Twentieth Amendment, each Congress spans a two-year term across two annual sessions. When a Congress adjourns sine die at the end of its two-year term, all pending bills expire. Sponsoring a bill is therefore a race against the calendar; actions like committee hearings, floor debates, cloture waiting periods, and veto overrides all consume scarce legislative time.",
+    "url": "https://www.senate.gov/about/powers-procedures/calendars-schedules.htm"
+  }
+};
+const stages = [
+  "Draft",
+  "Referral",
+  "Committee",
+  "House",
+  "Senate",
+  "Agreement",
+  "President",
+  "Debrief"
+];
+const scenes = {
+  "referral": {
+    "step": 1,
+    "tag": "PRACTICE",
+    "actor": "Speaker · Parliamentarian",
+    "title": "Your bill has a committee.",
+    "text": "Your sponsor has introduced H.R. SIM-1. We have a copy of the original, so you can see what changes along the way. Next stop: the communications committee. The Speaker makes the referral with advice from the Parliamentarian. It depends on what your bill covers.",
+    "lesson": "We start in the House here. Bills can also start in the Senate, though the Constitution requires bills that raise revenue to start in the House.",
+    "evidence": "procedure"
+  },
+  "committee": {
+    "step": 2,
+    "tag": "PRACTICE",
+    "actor": "Committee chair · Subcommittee",
+    "title": "The chair has a question.",
+    "text": "We handle communications policy, so your bill came to us. Plenty of bills arrive here and never get a hearing. I put yours on the schedule. At the hearing, a local operator raised a problem: some providers may struggle with these requirements.",
+    "lesson": "The subcommittee has suggested a change. We will consider it here in the full committee, which decides whether to send the bill to the House floor.",
+    "evidence": "procedure"
+  },
+  "markup": {
+    "step": 2,
+    "tag": "HOUSE RULE",
+    "actor": "Full committee",
+    "title": "A change to consider",
+    "text": "This meeting is called markup. Members propose changes to the bill, and we work through them. Here is the next amendment. Check what it changes, especially if it affects the provision you wanted to keep.",
+    "lesson": "You have heard people ask for different things. That is the kind of conflict Madison discusses in Federalist 10: groups bring different interests to lawmaking.",
+    "evidence": "faction"
+  },
+  "report": {
+    "step": 2,
+    "tag": "HOUSE RULE",
+    "actor": "Full committee",
+    "title": "The committee is ready to vote.",
+    "text": "We have finished considering those changes. Now the full committee votes on whether to report the bill. For this game, our committee has 25 members and everyone votes. You need 13.",
+    "lesson": "If it passes, it goes on the calendar. House leaders still have to make room for it on the floor.",
+    "evidence": "procedure"
+  },
+  "houseRule": {
+    "step": 3,
+    "tag": "HOUSE RULE",
+    "actor": "House majority leadership · Rules Committee",
+    "title": "Set the rules for debate",
+    "text": "Your bill has a spot on the schedule. First, the House needs to agree on the rules for this debate. The Rules Committee has proposed a structured rule allowing two amendments. Someone also submitted a school-uniform proposal. That one is outside the rule, so it will not get a vote here.",
+    "lesson": "Article I, Section 5 lets each chamber set its own procedures. A structured rule is one House option. Other bills follow different rules or the suspension process.",
+    "evidence": "rules"
+  },
+  "houseAmend": {
+    "step": 3,
+    "tag": "HOUSE RULE",
+    "actor": "House members",
+    "title": "A member proposes a change.",
+    "text": "We can consider this amendment under the rule the House just adopted. It changes how the bill would work in practice. The other amendment just clarified the short title. Its sponsor withdrew it, so we can focus on this one.",
+    "lesson": "Tell us which wording you want to defend. Members will decide whether to adopt the change.",
+    "evidence": "rules"
+  },
+  "houseVote": {
+    "step": 3,
+    "tag": "CONSTITUTION",
+    "actor": "House of Representatives",
+    "title": "The House takes a vote.",
+    "text": "Time for the passage vote. Some members want the upgrades for their districts. Others are worried about the cost. Passage usually takes a majority of those voting, with a quorum present. In this game, all 435 House members vote. That makes 218 the number to reach.",
+    "lesson": "If it passes, we send this version to the Senate. They can change it, reject it, or leave it waiting.",
+    "evidence": "concurrence"
+  },
+  "senateAmend": {
+    "step": 4,
+    "tag": "SIMULATION",
+    "actor": "Senate communications committee",
+    "title": "The Senate has its own concerns.",
+    "text": "We have received the House bill. Senators represent whole states, two per state, so they may bring different concerns to it. We will keep the Senate committee work brief here. Getting through the House does not guarantee Senate action.",
+    "lesson": "Our committee has a change to consider. If we adopt it, keep an eye on the House and Senate copies. They may no longer match.",
+    "evidence": "concurrence"
+  },
+  "senateRoute": {
+    "step": 4,
+    "tag": "SENATE RULE",
+    "actor": "Senate leaders · Individual senators",
+    "title": "Can we get to a vote?",
+    "text": "I might vote for your bill. That does not mean I agree to the proposed limits on debate. Check the two counts. One tells you who supports passage. The other tells you who would vote to end debate.",
+    "lesson": "If nobody objects, a consent agreement can get us to a vote. Otherwise, sponsors may negotiate or seek cloture. The Senate does not need a cloture vote on every bill.",
+    "evidence": "cloture"
+  },
+  "cloture": {
+    "step": 4,
+    "tag": "SENATE RULE",
+    "actor": "Senators pursuing cloture",
+    "title": "The vote to limit debate",
+    "text": "At least 16 senators have signed the cloture motion. There is a required waiting period. Here, that costs three session ticks. For ordinary legislation like this bill, cloture takes three-fifths of senators duly chosen and sworn. With all 100 seats filled, you need 60.",
+    "lesson": "If cloture passes, further debate is limited. We still have to hold a separate vote on the bill itself.",
+    "evidence": "cloture"
+  },
+  "senateVote": {
+    "step": 4,
+    "tag": "CONSTITUTION",
+    "actor": "United States Senate",
+    "title": "The Senate votes on passage.",
+    "text": "The Senate proceeds to final passage. Most Senate measures pass by a simple majority—51 affirmative votes with all 100 seats participating. This is distinct from Rule XXII cloture, which limits debate and normally requires three-fifths of senators duly chosen and sworn.",
+    "lesson": "If the bill passes, we will check this version against the one the House approved under Article I.",
+    "evidence": "concurrence"
+  },
+  "reconcile": {
+    "step": 5,
+    "tag": "CONSTITUTION",
+    "actor": "House and Senate negotiators",
+    "title": "Do the two copies match?",
+    "text": "Both chambers voted yes. Let me check the paperwork before we send anything to the president. Under Article I, the House and Senate must approve the same text. Even one remaining difference has to be settled.",
+    "lesson": "Here are the two copies. We will use an exchange of amendments to reach agreement. Congress can also appoint a conference committee, but it does not have to.",
+    "evidence": "concurrence"
+  },
+  "houseConcur": {
+    "step": 5,
+    "tag": "CONSTITUTION",
+    "actor": "House of Representatives",
+    "title": "Will the House agree?",
+    "text": "This wording has changed since our last vote. The House needs to approve it too.",
+    "lesson": "The negotiators have made their proposal. Now let us see whether a majority of members will accept it.",
+    "evidence": "concurrence"
+  },
+  "senateConcur": {
+    "step": 5,
+    "tag": "CONSTITUTION",
+    "actor": "United States Senate",
+    "title": "Will the Senate agree?",
+    "text": "The House has agreed to this version. Now it is our turn. By unanimous consent, senators have agreed to a timetable for this vote.",
+    "lesson": "We are voting on exactly the text the House approved.",
+    "evidence": "concurrence"
+  },
+  "president": {
+    "step": 6,
+    "tag": "CONSTITUTION",
+    "actor": "President",
+    "title": "The bill reaches the president.",
+    "text": "Welcome. Both chambers have approved the same text, and the enrolled bill is ready for the president. The president wants to keep costs down, give providers time to make the upgrades, and improve access to alerts nationwide. We have been watching your changes.",
+    "lesson": "Article I, Section 7 sets out presentment. The president acts on the whole bill. In this version of the game, you will get a signature or a returned veto.",
+    "evidence": "veto"
+  },
+  "overrideHouse": {
+    "step": 6,
+    "tag": "CONSTITUTION",
+    "actor": "House of Representatives",
+    "title": "The House considers an override.",
+    "text": "The president sent the bill back with objections. It comes to the House first because this is where it started. We can try to override the veto, but we must vote on the same text. We cannot revise it during this vote.",
+    "lesson": "An override needs two-thirds of those voting, with a quorum. With everyone voting here, that means 290. If we reach it, the Senate votes next.",
+    "evidence": "veto"
+  },
+  "overrideSenate": {
+    "step": 6,
+    "tag": "CONSTITUTION",
+    "actor": "United States Senate",
+    "title": "The Senate considers an override.",
+    "text": "The House voted to override. We still need to decide for ourselves.",
+    "lesson": "The bill has not changed. With all 100 senators voting, 67 must support the override for it to become law.",
+    "evidence": "veto"
+  }
+};
+const glossary = {
+  "Agenda setting": "Choosing which problems or bills get attention and time on the schedule.",
+  "Amendment": "A proposed change to a bill’s wording. The committee or chamber decides whether to adopt it.",
+  "Bicameralism": "Having two legislative chambers. In Congress, the House and Senate must agree on the same text to pass a law.",
+  "Calendar": "A list of bills that may be considered. Being listed does not guarantee a floor vote.",
+  "Cloture": "A Senate procedure that limits further debate. For ordinary legislation, it normally needs three-fifths of senators duly chosen and sworn.",
+  "Committee chair": "The member who leads a committee and has substantial control over what it considers.",
+  "Conference committee": "Members from both chambers appointed to work out differences between their versions of a bill.",
+  "Conference report": "The agreement reached by House and Senate negotiators. Each delegation must approve it, and each chamber then votes on it without floor amendments.",
+  "Enumerated power": "A power listed in the Constitution, such as Congress’s power to regulate interstate commerce.",
+  "Filibuster": "Using extended debate or other delaying procedures to block Senate action.",
+  "Germaneness": "Whether an amendment is relevant to the bill. House amendments generally must be germane unless that requirement is waived.",
+  "Hearing": "A meeting where a committee hears testimony and gathers information. A bill does not always need a hearing.",
+  "Hold": "An informal notice that a senator intends to object to or delay action.",
+  "Jurisdiction": "The subjects a committee is responsible for. It helps determine where a bill is referred.",
+  "Markup": "A committee meeting to consider amendments and decide what text to report.",
+  "Presentment": "Sending the bill to the president after both chambers have approved the same text.",
+  "Rider": "A provision attached to a bill, often on a different subject.",
+  "Session ticks": "A simulation of the limited legislative calendar in a two-year Congress. Under Article I and the 20th Amendment, a Congress lasts two years before adjourning sine die; any bills not enacted by then expire and must be reintroduced from scratch in the next Congress. In the game, actions consume ticks to reflect the time costs of committee hearings, markups, floor debates, cloture waiting periods, and bicameral reconciliation.",
+  "Sponsor": "The member who introduces a bill. A co-sponsor signs on to support it.",
+  "Standing committee": "A permanent committee that handles a particular set of subjects.",
+  "Subcommittee": "A smaller group within a committee that handles more specialized work.",
+  "Unanimous consent": "An agreement that can go ahead only if nobody objects.",
+  "Veto": "The president returns an entire bill to Congress with objections.",
+  "Veto override": "Both chambers vote by two-thirds to pass a returned bill despite the president’s objections."
+};
+
+// --- world-data.js ---
+
+// Original tile layouts. Institutional progression is separate from movement.
+const W=24,H=15,T=24;
+const rooms = {
+  "corridor": {
+    "name": "Capitol corridor",
+    "subtitle": "Welcome to the Capitol",
+    "tone": "#41605b",
+    "floor": "#577063",
+    "walls": "#203a3b",
+    "size": [
+      0,
+      0,
+      23,
+      14
+    ],
+    "props": [
+      [
+        6,
+        5,
+        "desk"
+      ],
+      [
+        7,
+        5,
+        "desk"
+      ],
+      [
+        11,
+        5,
+        "desk"
+      ],
+      [
+        12,
+        5,
+        "desk"
+      ],
+      [
+        17,
+        6,
+        "shelf"
+      ],
+      [
+        18,
+        6,
+        "shelf"
+      ],
+      [
+        4,
+        10,
+        "plant"
+      ],
+      [
+        19,
+        10,
+        "plant"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "caretaker",
+        "x": 4,
+        "y": 11,
+        "name": "Evening custodian",
+        "color": "#71858c",
+        "beats": [
+          "Floor debate went past midnight again. When leadership wants a bill through before recess, the coffee pots never get cold."
+        ]
+      },
+      {
+        "id": "guide",
+        "x": 5,
+        "y": 8,
+        "name": "Visitor guide",
+        "color": "#849875",
+        "beats": [
+          "Welcome to the Capitol! Citizens bring thousands of petition ideas here every week. But under Article I, only a member of Congress can formally introduce a bill.",
+          "The drafting desk is straight ahead. Counsel will help frame your policy idea into statutory language."
+        ],
+        "source": "powers"
+      },
+      {
+        "id": "archive",
+        "x": 18,
+        "y": 8,
+        "name": "Archivist",
+        "color": "#ac875c",
+        "beats": [
+          "The House and Senate maintain separate legislative journals. Before enrollment for the White House, our clerks verify that every single word and punctuation mark matches.",
+          "That bicameral concurrence is non-negotiable under Article I, Section 7. Procedural rules along the way determine whether a bill ever gets that far."
+        ],
+        "source": "checks"
+      }
+    ]
+  },
+  "committee": {
+    "name": "Committee room",
+    "subtitle": "Hearings and committee business",
+    "tone": "#716440",
+    "floor": "#7c7458",
+    "walls": "#393d31",
+    "size": [
+      3,
+      1,
+      20,
+      14
+    ],
+    "props": [
+      [
+        10,
+        4,
+        "desk"
+      ],
+      [
+        11,
+        4,
+        "desk"
+      ],
+      [
+        12,
+        4,
+        "desk"
+      ],
+      [
+        13,
+        4,
+        "desk"
+      ],
+      [
+        7,
+        7,
+        "chair"
+      ],
+      [
+        16,
+        7,
+        "chair"
+      ],
+      [
+        7,
+        10,
+        "chair"
+      ],
+      [
+        16,
+        10,
+        "chair"
+      ],
+      [
+        5,
+        3,
+        "shelf"
+      ],
+      [
+        18,
+        3,
+        "plant"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "staff",
+        "x": 6,
+        "y": 8,
+        "name": "Committee staffer",
+        "color": "#8ba293",
+        "beats": [
+          "Referral establishes our committee's legal jurisdiction. But don't celebrate yet—the chair exercises absolute gatekeeping power over what gets scheduled.",
+          "At hearings, we gather witness testimony. In markup, members debate textual amendments. Only if the full committee votes to report does your bill reach the floor calendar."
+        ],
+        "source": "procedure"
+      },
+      {
+        "id": "witness",
+        "x": 17,
+        "y": 9,
+        "name": "Local system operator",
+        "color": "#b08a69",
+        "beats": [
+          "My county has forty-year-old alert relays. We want dependable emergency alerts for our families as much as anyone, but equipment costs real money.",
+          "Give small municipal providers realistic phase-in time and grant support, and we can actually make these upgrades work."
+        ],
+        "source": "faction"
+      }
+    ]
+  },
+  "house": {
+    "name": "House chamber",
+    "subtitle": "435 seats · districts across the country",
+    "tone": "#476b7a",
+    "floor": "#54727b",
+    "walls": "#22343e",
+    "size": [
+      0,
+      0,
+      23,
+      14
+    ],
+    "props": [
+      [
+        10,
+        3,
+        "desk"
+      ],
+      [
+        11,
+        3,
+        "desk"
+      ],
+      [
+        12,
+        3,
+        "desk"
+      ],
+      [
+        13,
+        3,
+        "desk"
+      ],
+      [
+        5,
+        6,
+        "desk"
+      ],
+      [
+        5,
+        9,
+        "desk"
+      ],
+      [
+        8,
+        6,
+        "desk"
+      ],
+      [
+        8,
+        9,
+        "desk"
+      ],
+      [
+        15,
+        6,
+        "desk"
+      ],
+      [
+        15,
+        9,
+        "desk"
+      ],
+      [
+        18,
+        6,
+        "desk"
+      ],
+      [
+        18,
+        9,
+        "desk"
+      ],
+      [
+        3,
+        4,
+        "flag"
+      ],
+      [
+        20,
+        4,
+        "flag"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "representative",
+        "x": 5,
+        "y": 11,
+        "name": "Representative Vale",
+        "color": "#a6a076",
+        "beats": [
+          "My suburban constituents demand immediate alert access. But across the aisle, rural members face intense pushback regarding compliance mandates.",
+          "Every representative answers to a distinct congressional district. Forging a 218-member majority demands compromises."
+        ],
+        "source": "faction"
+      },
+      {
+        "id": "leader",
+        "x": 18,
+        "y": 11,
+        "name": "Leadership aide",
+        "color": "#7999ab",
+        "beats": [
+          "Your bill holds a spot on the calendar, but floor time is intensely contested. That’s why the Rules Committee drafts structured rules to restrict floor amendments.",
+          "Without special rules, 435 members offering floor amendments would bring House legislative business to a dead halt."
+        ],
+        "source": "rules"
+      }
+    ]
+  },
+  "senate": {
+    "name": "Senate chamber",
+    "subtitle": "100 seats · two senators per state",
+    "tone": "#665375",
+    "floor": "#70677b",
+    "walls": "#312d42",
+    "size": [
+      2,
+      0,
+      21,
+      14
+    ],
+    "props": [
+      [
+        10,
+        3,
+        "desk"
+      ],
+      [
+        11,
+        3,
+        "desk"
+      ],
+      [
+        12,
+        3,
+        "desk"
+      ],
+      [
+        13,
+        3,
+        "desk"
+      ],
+      [
+        6,
+        6,
+        "desk"
+      ],
+      [
+        8,
+        9,
+        "desk"
+      ],
+      [
+        15,
+        9,
+        "desk"
+      ],
+      [
+        17,
+        6,
+        "desk"
+      ],
+      [
+        4,
+        3,
+        "flag"
+      ],
+      [
+        19,
+        3,
+        "flag"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "senator",
+        "x": 6,
+        "y": 10,
+        "name": "Senator Rowan",
+        "color": "#a58dab",
+        "beats": [
+          "My state encompasses massive agricultural valleys and dense metropolitan centers. A one-size-fits-all timeline simply doesn't fit every local utility.",
+          "I may favor your bill's policy, but I will vigorously defend our Senate tradition of unlimited debate until our concerns are addressed."
+        ],
+        "source": "cloture"
+      },
+      {
+        "id": "procedure",
+        "x": 18,
+        "y": 10,
+        "name": "Senate parliamentarian",
+        "color": "#a99a6e",
+        "beats": [
+          "Senate Rule XXII governs the filibuster. Cloture requires three-fifths of all senators duly chosen and sworn—a mandatory 60 votes.",
+          "Holds are merely informal notices that a senator plans to object. If leadership cannot negotiate unanimous consent, a roll call on cloture is inevitable."
+        ],
+        "source": "cloture"
+      }
+    ]
+  },
+  "agreement": {
+    "name": "Bicameral meeting room",
+    "subtitle": "Working out the differences",
+    "tone": "#70704d",
+    "floor": "#7a795f",
+    "walls": "#3b4333",
+    "size": [
+      2,
+      1,
+      21,
+      14
+    ],
+    "props": [
+      [
+        9,
+        5,
+        "house-paper"
+      ],
+      [
+        10,
+        5,
+        "desk"
+      ],
+      [
+        11,
+        5,
+        "desk"
+      ],
+      [
+        12,
+        5,
+        "desk"
+      ],
+      [
+        13,
+        5,
+        "desk"
+      ],
+      [
+        14,
+        5,
+        "senate-paper"
+      ],
+      [
+        5,
+        3,
+        "flag"
+      ],
+      [
+        18,
+        3,
+        "flag"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "negotiator",
+        "x": 7,
+        "y": 9,
+        "name": "Chamber liaison",
+        "color": "#b2a47d",
+        "beats": [
+          "The House passed its bill; the Senate passed its version. Under Article I, Section 7, the President can only sign an identical text.",
+          "We can resolve differences via amendment exchange—often called 'amendment ping-pong'—or convene a formal conference committee to draft a conference report."
+        ],
+        "source": "concurrence"
+      }
+    ]
+  },
+  "executive": {
+    "name": "Executive office",
+    "subtitle": "At the White House",
+    "tone": "#41696b",
+    "floor": "#667e6e",
+    "walls": "#243f46",
+    "size": [
+      2,
+      1,
+      21,
+      14
+    ],
+    "props": [
+      [
+        10,
+        4,
+        "desk"
+      ],
+      [
+        11,
+        4,
+        "desk"
+      ],
+      [
+        12,
+        4,
+        "desk"
+      ],
+      [
+        13,
+        4,
+        "desk"
+      ],
+      [
+        5,
+        3,
+        "plant"
+      ],
+      [
+        18,
+        3,
+        "plant"
+      ],
+      [
+        5,
+        9,
+        "chair"
+      ],
+      [
+        18,
+        9,
+        "chair"
+      ],
+      [
+        16,
+        3,
+        "flag"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "executive-aide",
+        "x": 17,
+        "y": 8,
+        "name": "Executive staffer",
+        "color": "#91aaa0",
+        "beats": [
+          "Under Article I, Section 7, the President must consider the enrolled bill as a single package. The Supreme Court struck down line-item vetoes decades ago.",
+          "The President can sign, return the bill with objections for a regular veto, or allow it to become law without signature after ten days (excluding Sundays) if Congress remains in session."
+        ],
+        "source": "veto"
+      }
+    ]
+  },
+  "archive": {
+    "name": "Legislative archive",
+    "subtitle": "What happened to your bill?",
+    "tone": "#756446",
+    "floor": "#827556",
+    "walls": "#3d3b30",
+    "size": [
+      2,
+      1,
+      21,
+      14
+    ],
+    "props": [
+      [
+        5,
+        3,
+        "shelf"
+      ],
+      [
+        6,
+        3,
+        "shelf"
+      ],
+      [
+        17,
+        3,
+        "shelf"
+      ],
+      [
+        18,
+        3,
+        "shelf"
+      ],
+      [
+        10,
+        5,
+        "desk"
+      ],
+      [
+        11,
+        5,
+        "desk"
+      ],
+      [
+        12,
+        5,
+        "desk"
+      ],
+      [
+        13,
+        5,
+        "desk"
+      ]
+    ],
+    "npcs": [
+      {
+        "id": "historian",
+        "x": 17,
+        "y": 9,
+        "name": "Congressional historian",
+        "color": "#aa9363",
+        "beats": [
+          "Enactment proves a coalition navigated every constitutional hurdle. But Madison reminded us in Federalist 51 that checks and balances are designed to make lawmaking deliberate, not easy.",
+          "When a proposal fails, examine where the institutional brake applied: committee gatekeeping, structured rules, the Senate filibuster, or the executive veto."
+        ],
+        "source": "checks"
+      }
+    ]
+  }
+};
+const roomOrder=Object.keys(rooms);
+function roomFor(phase){if(['builder','referral'].includes(phase))return 'corridor';if(['committee','markup','report'].includes(phase))return 'committee';if(phase.startsWith('house')||phase==='overrideHouse')return 'house';if(phase.startsWith('senate')||phase==='cloture'||phase==='overrideSenate')return 'senate';if(phase==='reconcile')return 'agreement';if(phase==='president')return 'executive';return 'archive';}
+function objectsFor(room,phase,highest=0){
+ const base=rooms[room];const list=base.npcs.map(n=>({...n,type:'npc'}));
+ list.push({id:'ledger',x:room==='corridor'?18:base.size[2]-2,y:room==='corridor'?5:4,name:'Evidence shelf',type:'evidence'});
+ if(room==='corridor'){
+  list.push({id:'main',x:11,y:6,name:phase==='builder'?'Drafting desk':'Referral clerk',type:'main'});
+  ['committee','house','senate','agreement','executive','archive'].forEach((to,i)=>list.push({id:`door-${to}`,x:2+i*4,y:2,type:'door',to,name:rooms[to].name,locked:roomOrder.indexOf(to)>highest}));
+ }else{
+  list.push({id:'exit',x:11,y:13,type:'door',to:'corridor',name:room==='executive'?'Courtyard → Capitol corridor':'Capitol corridor'});
+  list.push({id:'main',x:11,y:room==='agreement'||room==='archive'?6:5,type:'main',name:({committee:'Committee chair',house:'House clerk',senate:'Senate clerk',agreement:'Bill comparison table',executive:'Presidential desk',archive:'Your legislative record'})[room]});
+ }
+ if(room===roomFor(phase)&&conversations[phase])list.find(o=>o.id==='main').name=conversations[phase].speaker;
+ return list;
+}
+function isWalkable(room,x,y,objects=[]){const [l,t,r,b]=rooms[room].size;if(x<=l||x>=r||y<=Math.max(t,2)||y>=b)return false;return !rooms[room].props.some(p=>p[0]===x&&p[1]===y)&&!objects.some(o=>o.x===x&&o.y===y&&o.type!=='door');}
+function pathTo(room,start,target,objects){
+ const queue=[start],seen=new Set([`${start.x},${start.y}`]),parent=new Map();let goal=null;
+ for(let i=0;i<queue.length;i++){const p=queue[i];if(Math.abs(p.x-target.x)+Math.abs(p.y-target.y)<=1){goal=p;break;}for(const [dx,dy] of [[0,-1],[1,0],[0,1],[-1,0]]){const n={x:p.x+dx,y:p.y+dy},key=`${n.x},${n.y}`;if(!seen.has(key)&&isWalkable(room,n.x,n.y,objects)){seen.add(key);parent.set(key,p);queue.push(n);}}}
+ if(!goal)return [];const result=[];while(goal.x!==start.x||goal.y!==start.y){result.unshift(goal);goal=parent.get(`${goal.x},${goal.y}`);}return result;
+}
+
+// --- world.js ---
+function mountWorld(canvas, { phase, highest, location, onInteract, onRoom, onNearby, onMove = () => {}, blocked, amended = 0, reduced = () => false }) {
+  const room = location.room;
+  const layout = rooms[room];
+  const objects = objectsFor(room, phase, highest);
+  let player = { x: location.x ?? 11, y: location.y ?? 11 };
+  let facing = 'down', last = 0, frame = 0, keys = new Set(), path = [], arrival = null, disposed = false, lastNear = '';
+  const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1;
+  const ctx = canvas.getContext('2d');
+  canvas.width = Math.round(W * T * dpr);
+  canvas.height = Math.round(H * T * dpr);
+
+  function nearest() {
+    const fx = player.x + (facing === 'left' ? -1 : facing === 'right' ? 1 : 0);
+    const fy = player.y + (facing === 'up' ? -1 : facing === 'down' ? 1 : 0);
+    const frontObj = objects.find(o => o.x === fx && o.y === fy);
+    if (frontObj) return frontObj;
+    return objects.find(o => Math.abs(o.x - player.x) + Math.abs(o.y - player.y) <= 1) || null;
+  }
+
+  function rect(x, y, w, h, c) {
+    ctx.fillStyle = c;
+    ctx.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h));
+  }
+
+  // Draw living Bill player sprite with rich pixel details and animations
+  function drawBill(x, y, dir, bob, walking) {
+    // Drop shadow
+    rect(x + 4, y + 19, 16, 4, '#10222a66');
+
+    const lean = walking ? (dir === 'left' ? -1 : dir === 'right' ? 1 : 0) : 0;
+    const px = x + 5 + lean;
+    const py = y + 2 + bob;
+
+    // Outer border / deckle edge
+    rect(px, py, 14, 18, '#8e7039');
+    // Parchment paper body
+    rect(px + 1, py + 1, 12, 16, '#faedd0');
+    // Paper interior texture
+    rect(px + 2, py + 2, 10, 14, '#fff9e6');
+
+    // Folded top-right corner
+    rect(px + 9, py + 1, 4, 4, '#8e7039');
+    rect(px + 10, py + 1, 3, 3, '#c29f58');
+    rect(px + 11, py + 1, 2, 2, '#ebd594');
+    rect(px + 9, py + 3, 2, 2, '#705423');
+
+    // Simulated legislative lines
+    rect(px + 3, py + 4, 5, 1, '#cdb37a');
+    rect(px + 3, py + 6, 8, 1, '#d8c592');
+
+    // Official wax seal & ribbon on chest
+    rect(px + 8, py + 12, 4, 4, '#b03527');
+    rect(px + 9, py + 13, 2, 2, '#eec55c');
+    rect(px + 9, py + 16, 1, 2, '#962b1e');
+    rect(px + 11, py + 16, 1, 2, '#962b1e');
+
+    // Expressive Eyes with blinking
+    const isBlinking = !reduced() && (frame % 130 < 6);
+    let eyeY = py + 8;
+    let eyeX1 = px + 4, eyeX2 = px + 8;
+    if (dir === 'left') { eyeX1 = px + 3; eyeX2 = px + 6; }
+    else if (dir === 'right') { eyeX1 = px + 6; eyeX2 = px + 9; }
+    else if (dir === 'up') { eyeY = py + 7; }
+
+    if (isBlinking || dir === 'up') {
+      rect(eyeX1, eyeY + 1, 2, 1, '#2c373b');
+      rect(eyeX2, eyeY + 1, 2, 1, '#2c373b');
+    } else {
+      rect(eyeX1, eyeY, 2, 2, '#202f34');
+      rect(eyeX2, eyeY, 2, 2, '#202f34');
+      // Eye reflection glint
+      rect(eyeX1, eyeY, 1, 1, '#ffffff');
+      rect(eyeX2, eyeY, 1, 1, '#ffffff');
+    }
+
+    // Friendly determined smile
+    if (dir !== 'up') {
+      rect(px + 5, py + 11, 4, 1, '#b5975d');
+    }
+
+    // Attached riders/amendments (colored seals pinned to document edge)
+    const riderColors = ['#2f7053', '#39607e', '#b86e28'];
+    for (let i = 0; i < Math.min(3, amended); i++) {
+      const rx = px - 2;
+      const ry = py + 7 + i * 3;
+      rect(rx, ry, 3, 3, riderColors[i]);
+      rect(rx + 1, ry + 1, 1, 1, '#e8cf82'); // brass pin
+    }
+
+    // Walking stride legs
+    const stride = !reduced() && walking ? (Math.floor(frame / 6) % 2) : 0;
+    rect(px + 3, py + 18, 3, 2 + stride, '#725629');
+    rect(px + 8, py + 18, 3, 3 - stride, '#725629');
+  }
+
+  // Draw role-specific NPC sprites with distinct silhouettes
+  function drawNPC(x, y, o, dir, near) {
+    const bob = reduced() ? 0 : (Math.floor((frame + o.x * 7) / 28) % 2);
+    // Shadow
+    rect(x + 5, y + 19, 14, 4, '#10222a66');
+
+    const px = x + 5;
+    const py = y + 1 + bob;
+    const color = o.color || '#8c9ea6';
+    const id = o.id || '';
+
+    // Head base (skin tone)
+    const skin = (id === 'witness' || id === 'senator') ? '#d4ad88' : (id === 'caretaker') ? '#b88a68' : '#cba482';
+    rect(px + 3, py + 2, 8, 8, skin);
+
+    // Hair / Headwear styles by role
+    if (id === 'senator' || id === 'main' && room === 'committee') {
+      // Distinguished silver/grey side-parted hair
+      rect(px + 2, py + 1, 10, 3, '#c2c8cf');
+      rect(px + 1, py + 2, 2, 5, '#9aa1a8');
+      rect(px + 10, py + 2, 2, 5, '#9aa1a8');
+    } else if (id === 'caretaker') {
+      // Blue utility service cap
+      rect(px + 1, py, 11, 4, '#2d4352');
+      rect(px + 2, py + 3, 10, 1, '#1b2c37');
+    } else if (id === 'procedure' || id === 'archive') {
+      // Academic hair with spectacles
+      rect(px + 2, py + 1, 9, 3, '#6e523f');
+      rect(px + 2, py + 3, 2, 4, '#553d2d');
+      rect(px + 9, py + 3, 2, 4, '#553d2d');
+    } else if (id === 'representative' || id === 'guide') {
+      // Professional neat parted hairstyle
+      rect(px + 2, py + 1, 10, 3, '#382a24');
+      rect(px + 2, py + 3, 2, 5, '#382a24');
+      rect(px + 9, py + 3, 2, 4, '#382a24');
+    } else {
+      // Standard professional hair
+      rect(px + 2, py + 1, 10, 3, '#433732');
+      rect(px + 2, py + 3, 2, 4, '#433732');
+      rect(px + 9, py + 3, 2, 4, '#433732');
+    }
+
+    // Eyes and Facial expressions
+    if (dir === 'up') {
+      // Back of head
+      rect(px + 2, py + 2, 10, 6, id === 'senator' ? '#c2c8cf' : id === 'caretaker' ? '#2d4352' : '#433732');
+    } else {
+      let ex1 = px + 4, ex2 = px + 8;
+      if (dir === 'left') { ex1 = px + 3; ex2 = px + 6; }
+      else if (dir === 'right') { ex1 = px + 6; ex2 = px + 9; }
+
+      rect(ex1, py + 5, 2, 2, '#21272a');
+      if (dir !== 'left' && dir !== 'right') rect(ex2, py + 5, 2, 2, '#21272a');
+
+      // Glasses for parliamentarian / archivist
+      if (id === 'procedure' || id === 'archive') {
+        rect(px + 3, py + 4, 4, 3, 'rgba(180, 210, 230, 0.4)');
+        rect(px + 7, py + 4, 4, 3, 'rgba(180, 210, 230, 0.4)');
+        rect(px + 3, py + 4, 8, 1, '#7a91a0');
+      }
+    }
+
+    // Body / Suit Coat
+    rect(px + 1, py + 10, 12, 9, color);
+
+    // Collar, Lapels, and Ties
+    if (dir !== 'up') {
+      rect(px + 5, py + 10, 4, 2, '#ffffff'); // shirt collar
+      const tieColor = id === 'senator' ? '#7e2d3b' : id === 'representative' ? '#2f4f6e' : id === 'executive-aide' ? '#c99e46' : '#4a3f3a';
+      rect(px + 6, py + 12, 2, 4, tieColor); // tie
+
+      // Congressional Lapel Pin (gold badge)
+      if (id === 'representative' || id === 'senator' || id === 'main') {
+        rect(px + 3, py + 12, 2, 2, '#eec55c');
+      }
+      // ID Lanyard for aides/clerks
+      if (id === 'staff' || id === 'leader' || id === 'negotiator') {
+        rect(px + 5, py + 13, 4, 3, '#f2e8c4');
+        rect(px + 6, py + 14, 2, 1, '#4a6572');
+      }
+      // Wooden gavel for committee chair
+      if (room === 'committee' && o.id === 'main') {
+        rect(px + 10, py + 13, 3, 2, '#a07038');
+        rect(px + 11, py + 15, 1, 3, '#754f24');
+      }
+      // Book / Folio for Parliamentarian / Archivist
+      if (id === 'procedure' || id === 'archive' || id === 'historian') {
+        rect(px + 10, py + 12, 3, 5, '#782d22');
+        rect(px + 11, py + 13, 2, 1, '#e8cf82');
+      }
+    } else {
+      // Suit back seam
+      rect(px + 6, py + 11, 2, 8, 'rgba(0,0,0,0.15)');
+    }
+
+    // Legs / Pants
+    const pants = id === 'caretaker' ? '#24343f' : '#1e262d';
+    rect(px + 3, py + 19, 3, 3, pants);
+    rect(px + 8, py + 19, 3, 3, pants);
+  }
+
+  function draw() {
+    if (disposed) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    frame++;
+
+    // Base background
+    rect(0, 0, W * T, H * T, '#0d161e');
+    const [l, t, r, b] = layout.size;
+
+    // 1. Draw floor and walls with architectural distinction
+    for (let y = t; y <= b; y++) {
+      for (let x = l; x <= r; x++) {
+        const isWall = x === l || x === r || y < 3 || y === b;
+        if (isWall) {
+          rect(x * T, y * T, T, T, layout.walls);
+          // Wall paneling or trim
+          if (y === 2) {
+            rect(x * T, y * T + 14, T, 6, '#b5a97f');
+            rect(x * T, y * T + 20, T, 4, '#1b2a2b');
+          } else if (y === 1) {
+            rect(x * T, y * T + 2, T, 2, 'rgba(255,255,255,0.06)');
+          }
+        } else {
+          // Floor rendering per room style
+          if (room === 'corridor') {
+            // Checkered marble Capitol floor
+            const check = (x + y) % 2 === 0;
+            rect(x * T, y * T, T, T, check ? '#5d756d' : '#526961');
+            rect(x * T, y * T, T, 1, 'rgba(255, 255, 255, 0.08)');
+            rect(x * T, y * T, 1, T, 'rgba(0, 0, 0, 0.08)');
+          } else if (room === 'house') {
+            // House blue carpet with border trim
+            rect(x * T, y * T, T, T, '#496b79');
+            if ((x * 5 + y * 7) % 8 === 0) rect(x * T + 8, y * T + 8, 4, 4, '#5c8191');
+          } else if (room === 'senate') {
+            // Senate crimson/purple carpet
+            rect(x * T, y * T, T, T, '#674d6b');
+            if ((x * 7 + y * 3) % 9 === 0) rect(x * T + 10, y * T + 10, 3, 3, '#7d5f82');
+          } else if (room === 'committee') {
+            // Warm wood parquet flooring
+            rect(x * T, y * T, T, T, '#76684a');
+            rect(x * T, y * T + 11, T, 1, '#615438');
+            rect(x * T + 11, y * T, 1, T, '#615438');
+          } else if (room === 'executive') {
+            // Polished Oval Office parquet
+            rect(x * T, y * T, T, T, '#5d7567');
+          } else {
+            // Default handsome tile
+            rect(x * T, y * T, T, T, layout.floor);
+            rect(x * T, y * T, T, 1, 'rgba(255, 255, 255, 0.07)');
+            rect(x * T, y * T, 1, T, 'rgba(0, 0, 0, 0.07)');
+          }
+        }
+      }
+    }
+
+    // 2. Specialized Chamber Architecture & Staging
+    if (room === 'corridor') {
+      // Marble neoclassical fluted columns along hallway walls (avoiding doors)
+      for (const cx of [0, 4, 20, 23]) {
+        rect(cx * T, 10, 20, 58, '#dce3d5');
+        rect(cx * T + 2, 12, 16, 54, '#f0f5ea');
+        rect(cx * T + 5, 14, 2, 50, '#cad4c0');
+        rect(cx * T + 9, 14, 2, 50, '#cad4c0');
+        rect(cx * T + 13, 14, 2, 50, '#cad4c0');
+        rect(cx * T - 2, 10, 24, 4, '#c2cbba'); // capital
+        rect(cx * T - 2, 64, 24, 5, '#a6b09e'); // base
+      }
+      // Grand central runner carpet
+      rect(10 * T, 3 * T, 4 * T, 11 * T, '#753b3b');
+      rect(10 * T, 3 * T, 2, 11 * T, '#e0be6c');
+      rect(14 * T - 2, 3 * T, 2, 11 * T, '#e0be6c');
+    } else if (room === 'house') {
+      // Speaker's Rostrum backdrop & House Mace silhouette
+      rect(10 * T, 20, 4 * T, 48, '#2a4454');
+      rect(10 * T + 4, 22, 4 * T - 8, 44, '#39576b');
+      // Gilded Eagle Crest on rostrum wall
+      rect(11 * T + 12, 28, 24, 16, '#cca542');
+      rect(11 * T + 18, 25, 12, 6, '#edd379');
+      // Blue runner aisle
+      rect(10 * T, 3 * T, 4 * T, 11 * T, '#345263');
+      rect(10 * T, 3 * T, 2, 11 * T, '#d9be6f');
+      rect(14 * T - 2, 3 * T, 2, 11 * T, '#d9be6f');
+    } else if (room === 'senate') {
+      // Vice President / Presiding Officer Dais & Walnut Canopy
+      rect(10 * T, 18, 4 * T, 52, '#422838');
+      rect(10 * T + 4, 22, 4 * T - 8, 44, '#56354a');
+      // Senate seal & draped velvet swag
+      rect(11 * T + 10, 26, 28, 14, '#bfa254');
+      rect(10 * T + 6, 24, 3 * T + 12, 4, '#942b3d');
+      // Crimson runner aisle with gold Greek key borders
+      rect(10 * T, 3 * T, 4 * T, 11 * T, '#522b3e');
+      rect(10 * T, 3 * T, 2, 11 * T, '#dfc476');
+      rect(14 * T - 2, 3 * T, 2, 11 * T, '#dfc476');
+    } else if (room === 'executive') {
+      // Iconic Oval Office Medallion Rug
+      rect(6 * T, 5 * T, 12 * T, 8 * T, '#2f515e');
+      rect(6 * T + 6, 5 * T + 6, 12 * T - 12, 8 * T - 12, '#3c6677');
+      rect(8 * T, 6 * T, 8 * T, 6 * T, '#487587');
+      // Gold laurel wreath ring representation
+      rect(7 * T, 5 * T + 10, 10 * T, 2, '#d4bc72');
+      rect(7 * T, 13 * T - 12, 10 * T, 2, '#d4bc72');
+    } else if (room === 'committee') {
+      // Elevated Committee Dais Rostrum
+      rect(8 * T, 3 * T + 12, 8 * T, 20, '#54422b');
+      rect(8 * T + 2, 3 * T + 14, 8 * T - 4, 4, '#876b47');
+      // Aisle
+      rect(10 * T, 4 * T, 4 * T, 10 * T, '#67583f');
+      rect(10 * T, 4 * T, 2, 10 * T, '#ba9e63');
+      rect(14 * T - 2, 4 * T, 2, 10 * T, '#ba9e63');
+    } else if (room === 'archive') {
+      // Archive center runner
+      rect(10 * T, 3 * T, 4 * T, 11 * T, '#6a5639');
+      rect(10 * T, 3 * T, 2, 11 * T, '#cca864');
+      rect(14 * T - 2, 3 * T, 2, 11 * T, '#cca864');
+    }
+
+    // 3. Tall Palladian Windows with Volumetric Light Shafts
+    if (room !== 'corridor') {
+      for (const wx of [l + 2, r - 3]) {
+        // Window Frame
+        rect(wx * T, 14, 44, 38, '#182736');
+        rect(wx * T + 3, 16, 38, 32, '#5e858d');
+        // Transom arch
+        rect(wx * T + 6, 17, 32, 4, '#a2b8be');
+        // Muntins (panes)
+        rect(wx * T + 21, 16, 3, 33, '#d5cb9f');
+        rect(wx * T + 2, 31, 40, 3, '#d5cb9f');
+        // Warm angled light shaft
+        ctx.fillStyle = room === 'executive' ? 'rgba(255, 245, 190, 0.08)' : 'rgba(210, 235, 230, 0.06)';
+        ctx.beginPath();
+        ctx.moveTo(wx * T, 52);
+        ctx.lineTo(wx * T + 44, 52);
+        ctx.lineTo(wx * T + 78, 175);
+        ctx.lineTo(wx * T - 22, 175);
+        ctx.fill();
+      }
+    }
+
+    // 4. Glowing Wall Sconces with soft radial gradients
+    const sconcePositions = room === 'corridor' ? [l + 1, l + 7, l + 14, r - 1] : [l + 1, r - 1];
+    for (const sx of sconcePositions) {
+      const px = sx * T + 12;
+      const py = 35;
+      // Brass torch bracket
+      rect(px - 2, py + 2, 4, 8, '#9c8141');
+      rect(px - 3, py + 1, 6, 2, '#d4b768');
+      // Torch flame
+      rect(px - 1, py - 3, 2, 4, '#f5d378');
+      // Subtle ambient light radial halo
+      const grad = ctx.createRadialGradient(px, py - 1, 2, px, py - 1, 26);
+      grad.addColorStop(0, 'rgba(255, 228, 145, 0.22)');
+      grad.addColorStop(1, 'rgba(255, 228, 145, 0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(px, py - 1, 26, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // 5. Rich Props Rendering
+    for (const [x, y, kind] of layout.props) {
+      const px = x * T;
+      const py = y * T;
+      // Prop shadow
+      rect(px + 2, py + 19, 25, 6, '#10222a55');
+
+      if (kind === 'plant') {
+        // Terracotta pot with gold band
+        rect(px + 6, py + 13, 14, 11, '#946648');
+        rect(px + 5, py + 12, 16, 3, '#ba8b68');
+        rect(px + 7, py + 18, 12, 2, '#d6ab76');
+        // Lush layered foliage
+        rect(px + 2, py + 4, 22, 9, '#28523c');
+        rect(px + 5, py - 2, 16, 14, '#3d7355');
+        rect(px + 8, py - 4, 10, 10, '#5ba179');
+      } else if (kind === 'flag') {
+        // Brass flagpole with eagle finial
+        rect(px + 4, py - 16, 2, 40, '#cfba78');
+        rect(px + 3, py - 18, 4, 3, '#f0d98f');
+        // Draped cloth
+        const flagColor = room === 'senate' ? '#782d3b' : room === 'executive' ? (x < 12 ? '#244572' : '#8a2b38') : '#2f527c';
+        rect(px + 6, py - 14, 16, 22, flagColor);
+        // Gold fringe & tassel
+        rect(px + 6, py + 8, 16, 2, '#ebd17a');
+        rect(px + 8, py - 11, 4, 4, '#ffffff'); // star canton
+      } else if (kind === 'shelf') {
+        // Rich wooden bookcase
+        rect(px, py - 14, 26, 38, '#453323');
+        rect(px + 1, py - 13, 24, 36, '#2e2015');
+        // Shelves
+        rect(px + 1, py - 1, 24, 3, '#75593e');
+        rect(px + 1, py + 11, 24, 3, '#75593e');
+        // Multi-colored leather bound books with gold spine text
+        const spineColors = ['#8f2d2b', '#284f6e', '#2e5e3a', '#946c2b', '#5c3968'];
+        for (let i = 0; i < 6; i++) {
+          rect(px + 2 + i * 4, py - 10, 3, 9, spineColors[i % spineColors.length]);
+          rect(px + 2 + i * 4, py - 6, 3, 1, '#f2d480'); // gold tooling
+          rect(px + 2 + i * 4, py + 2, 3, 9, spineColors[(i + 2) % spineColors.length]);
+          rect(px + 2 + i * 4, py + 6, 3, 1, '#f2d480');
+        }
+      } else {
+        // Desks & Chairs
+        if (kind === 'chair') {
+          // Leather upholstered chair with polished wooden frame
+          rect(px + 3, py + 2, 20, 19, '#433425');
+          const leather = room === 'senate' ? '#683547' : room === 'committee' ? '#2f5240' : '#2b4454';
+          rect(px + 5, py + 4, 16, 14, leather);
+          rect(px + 6, py + 5, 14, 2, 'rgba(255,255,255,0.15)');
+        } else {
+          // Polished Legislative Desk
+          rect(px + 1, py + 3, 24, 18, '#4a3622');
+          rect(px, py, 26, 17, '#785b3b');
+          rect(px + 1, py + 1, 24, 3, '#a8865c');
+          rect(px + 2, py + 6, 8, 8, '#594129'); // drawer
+          rect(px + 16, py + 6, 8, 8, '#594129');
+
+          // Desk Accessories
+          if (kind.includes('paper')) {
+            rect(px + 6, py + 4, 14, 10, kind === 'house-paper' ? '#2f5a7d' : '#6b2d4b');
+            rect(px + 7, py + 5, 12, 8, '#f5ecd5');
+            ctx.font = 'bold 7px monospace';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(kind === 'house-paper' ? 'HOUSE' : 'SENATE', px + 2, py - 4);
+          } else {
+            // Paper blotter and inkwell/microphone
+            rect(px + 6, py + 4, 14, 9, '#2a3d47');
+            rect(px + 8, py + 5, 10, 7, '#f7f0dc');
+            // Small brass desk lamp or mic
+            rect(px + 2, py + 2, 3, 4, '#cca849');
+          }
+        }
+      }
+    }
+
+    // 6. Doors & Interactive Portals
+    for (const o of objects) {
+      const x = o.x * T;
+      const y = o.y * T;
+
+      if (o.type === 'door') {
+        // Portal archway
+        rect(x - 8, y - 24, 40, 48, '#131e28');
+        rect(x - 10, y - 26, 44, 4, '#c2ab6d');
+        rect(x - 8, y - 22, 4, 46, '#96834f');
+        rect(x + 28, y - 22, 4, 46, '#96834f');
+        // Heavy wood door with panels
+        rect(x - 4, y - 22, 32, 44, o.locked ? '#353942' : '#3d6166');
+        rect(x - 1, y - 18, 12, 16, o.locked ? '#282a30' : '#2b494d');
+        rect(x + 13, y - 18, 12, 16, o.locked ? '#282a30' : '#2b494d');
+        rect(x - 1, y + 2, 12, 16, o.locked ? '#282a30' : '#2b494d');
+        rect(x + 13, y + 2, 12, 16, o.locked ? '#282a30' : '#2b494d');
+        // Brass handle
+        rect(x + 21, y + 5, 3, 5, '#eec55c');
+
+        // Architectural Header Plaque above door
+        const label = (o.to === 'corridor' ? 'CAPITOL' : o.to).toUpperCase();
+        rect(x - 14, y - 39, 52, 12, '#121f28');
+        rect(x - 14, y - 39, 52, 1, '#d8c279'); // gold top bevel
+        rect(x - 14, y - 28, 52, 1, '#5e4e2c'); // bronze bottom shadow
+        rect(x - 14, y - 39, 1, 12, '#8f7b44'); // left trim
+        rect(x + 37, y - 39, 1, 12, '#8f7b44'); // right trim
+
+        ctx.font = 'bold 8px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = o.locked ? '#76888c' : '#fcedc0';
+        ctx.fillText(label, x + 12, y - 30);
+        ctx.textAlign = 'left';
+      } else if (o.type === 'evidence') {
+        // Evidence Ledger Table
+        rect(x - 2, y - 2, 28, 24, '#4f3b28');
+        rect(x, y, 24, 20, '#75583b');
+        rect(x + 2, y + 2, 10, 14, '#ebdcb2');
+        rect(x + 13, y + 2, 9, 14, '#b03b2e'); // red bound Constitution
+        rect(x + 4, y + 5, 6, 1, '#665338');
+        rect(x + 15, y + 5, 5, 1, '#f2d480');
+      } else {
+        const near = Math.abs(o.x - player.x) + Math.abs(o.y - player.y) <= 1;
+        const dir = near ? (player.x < o.x ? 'left' : player.x > o.x ? 'right' : player.y < o.y ? 'up' : 'down') : 'down';
+        drawNPC(x, y, o, dir, near);
+      }
+    }
+
+    // 7. Draw Player Character (Bill)
+    const isWalking = keys.size > 0 || path.length > 0;
+    const playerBob = reduced() ? 0 : isWalking ? (Math.floor(frame / 6) % 2) : (Math.floor(frame / 24) % 2);
+    drawBill(player.x * T, player.y * T, facing, playerBob, isWalking);
+
+    // 8. Interaction Markers & Indicators
+    const near = nearest();
+    for (const o of objects) {
+      const isTarget = (o.id === 'main' && room === roomFor(phase)) ||
+        (o.type === 'door' && (room === 'corridor' ? o.to === roomFor(phase) : room !== roomFor(phase) && o.to === 'corridor')) ||
+        o === near;
+
+      if (isTarget) {
+        const mx = o.x * T + 10;
+        const my = o.y * T - 14;
+        const isFocus = o === near;
+
+        // Bouncing indicator
+        const markerBounce = reduced() ? 0 : Math.sin(frame * 0.1) * 2;
+        rect(mx - 6, my - 6 + markerBounce, 14, 13, isFocus ? '#fce89f' : '#d9b657');
+        rect(mx - 5, my - 5 + markerBounce, 12, 11, isFocus ? '#fff4cc' : '#edd079');
+
+        ctx.font = 'bold 9px monospace';
+        ctx.fillStyle = '#1c2830';
+        ctx.fillText(isFocus ? 'E' : '!', mx - 2, my + 4 + markerBounce);
+      }
+    }
+
+    // Top and bottom ambient framing
+    rect(0, 0, W * T, 4, 'rgba(10, 20, 28, 0.6)');
+    rect(0, H * T - 4, W * T, 4, 'rgba(8, 16, 24, 0.8)');
+
+    if (near?.id !== lastNear) {
+      lastNear = near?.id;
+      onNearby(near, player);
+    }
+    location.x = player.x;
+    location.y = player.y;
+  }
+
+  function interact(o = nearest()) {
+    if (blocked()) return;
+    if (!o) {
+      onNearby(null, player);
+      return;
+    }
+    if (o.type === 'door') {
+      if (o.locked) {
+        onInteract({ name: 'Door notice', beats: ['Your bill has not reached this room yet. Check the note above the map for your next stop.'] });
+        return;
+      }
+      onRoom(o.to);
+      return;
+    }
+    onInteract(o);
+  }
+
+  function step(dx, dy) {
+    facing = dx < 0 ? 'left' : dx > 0 ? 'right' : dy < 0 ? 'up' : 'down';
+    if (isWalkable(room, player.x + dx, player.y + dy, objects)) {
+      player.x += dx;
+      player.y += dy;
+      onMove({ ...player });
+    }
+    draw();
+  }
+
+  function keydown(e) {
+    if (blocked() || e.target !== canvas) return;
+    const key = e.key.toLowerCase();
+    if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd', 'e', 'enter', ' '].includes(key)) {
+      e.preventDefault();
+      if (['e', 'enter', ' '].includes(key)) {
+        if (!e.repeat) interact();
+      } else {
+        keys.add(key);
+        path = [];
+        arrival = null;
+        if (!e.repeat) {
+          const [dx, dy] = ({ arrowup: [0, -1], w: [0, -1], arrowdown: [0, 1], s: [0, 1], arrowleft: [-1, 0], a: [-1, 0], arrowright: [1, 0], d: [1, 0] })[key];
+          step(dx, dy);
+          last = performance.now();
+        }
+      }
+    }
+  }
+
+  function keyup(e) {
+    keys.delete(e.key.toLowerCase());
+  }
+
+  function clear() {
+    keys.clear();
+  }
+
+  function go(o) {
+    canvas.focus();
+    if (blocked()) return;
+    keys.clear();
+    if (Math.abs(o.x - player.x) + Math.abs(o.y - player.y) <= 1) {
+      interact(o);
+      return;
+    }
+    path = pathTo(room, player, o, objects);
+    arrival = o;
+  }
+
+  function click(e) {
+    const b = canvas.getBoundingClientRect();
+    const x = Math.floor((e.clientX - b.left) / b.width * W);
+    const y = Math.floor((e.clientY - b.top) / b.height * H);
+    const o = objects.find(o => o.x === x && Math.abs(o.y - y) <= 1);
+    if (o) return go(o);
+    canvas.focus();
+    keys.clear();
+    arrival = null;
+    path = pathTo(room, player, { x, y }, objects);
+    const end = path.at(-1) || player;
+    if (isWalkable(room, x, y, objects) && Math.abs(end.x - x) + Math.abs(end.y - y) === 1) {
+      path.push({ x, y });
+    }
+  }
+
+  function loop(time) {
+    if (disposed) return;
+    if (!blocked() && time - last > 115) {
+      last = time;
+      if (path.length) {
+        player = path.shift();
+        onMove({ ...player });
+        if (!path.length && arrival) {
+          const o = arrival;
+          arrival = null;
+          interact(o);
+        }
+      } else if (keys.size) {
+        if (keys.has('arrowup') || keys.has('w')) step(0, -1);
+        else if (keys.has('arrowdown') || keys.has('s')) step(0, 1);
+        else if (keys.has('arrowleft') || keys.has('a')) step(-1, 0);
+        else if (keys.has('arrowright') || keys.has('d')) step(1, 0);
+      }
+    } else if (blocked()) {
+      keys.clear();
+      path = [];
+      arrival = null;
+    }
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  document.addEventListener('keydown', keydown);
+  document.addEventListener('keyup', keyup);
+  window.addEventListener('blur', clear);
+  canvas.addEventListener('click', click);
+  requestAnimationFrame(loop);
+
+  return {
+    go,
+    objects,
+    interact,
+    dispose() {
+      disposed = true;
+      document.removeEventListener('keydown', keydown);
+      document.removeEventListener('keyup', keyup);
+      window.removeEventListener('blur', clear);
+      canvas.removeEventListener('click', click);
+    }
+  };
+}
+
+// --- game.js ---
+const VERSION = 1;
+const clone = value => JSON.parse(JSON.stringify(value));
+const equal = (a,b) => JSON.stringify(Object.entries(a || {}).sort()) === JSON.stringify(Object.entries(b || {}).sort());
+function initial() { return { version:VERSION, phase:'builder', draft:['standard','grants','deadline'], priority:'standard', current:{}, introduced:null, house:null, senate:null, enrolled:null, history:[], evidence:[], ticks:18, outcome:null, checkpoint:null, notice:null, claim:null }; }
+function forecast(s, kind, text = s.current) {
+ const index = { house:0, senate:1, cloture:2, president:3 }[kind] ?? 0;
+ const base = { house:200, senate:45, cloture:48, president:0 }[kind] ?? 200;
+ const reasons = Object.entries(text).map(([id,v])=>({label:`${cards[id].name}${v ? ' · amended' : ''}`, value:cards[id].effects[v][index]}));
+ const total = base + reasons.reduce((a,x)=>a+x.value,0);
+ if (kind === 'committee') return {total:9+Math.floor((total-200)/5), threshold:13,max:25,base:9,reasons:[{label:'Support for how the bill would work',value:Math.floor((total-200)/5)}]};
+ if (kind === 'rule') return {total:225,threshold:218,max:435,base:225,reasons:[{label:'Members backing the leaders’ proposed rule',value:0}]};
+ if (kind === 'overrideHouse') return {total:Math.min(435,total+60), threshold:290,max:435,base:200,reasons:[...reasons,{label:'Extra House support against the veto (game assumption)',value:60}]};
+ if (kind === 'overrideSenate') {const f=forecast(s,'senate',text); return {...f,total:Math.min(100,f.total+9),threshold:67,reasons:[...f.reasons,{label:'Extra Senate support for the agreed bill (game assumption)',value:9}]};}
+ return {total,base,reasons,threshold:{house:218,senate:51,cloture:60,president:3}[kind],max:{house:435,senate:100,cloture:100,president:12}[kind]};
+}
+function proposal(s) {
+ const pending = Object.keys(s.current).filter(id=>s.current[id]===0);
+ const order = s.phase === 'markup' ? [s.priority,...pending] : s.phase === 'senateAmend' ? ['preemption','waiver','standard','penalties','grants','deadline'] : ['deadline','grants','penalties','preemption','waiver','standard'];
+ return order.find(id=>pending.includes(id)) || null;
+}
+function voteKind(phase) { return ({report:'committee',houseRule:'rule',houseVote:'house',cloture:'cloture',senateVote:'senate',houseConcur:'house',senateConcur:'senate',overrideHouse:'overrideHouse',overrideSenate:'overrideSenate'})[phase]; }
+function record(s, text, data={}) { s.history.push({phase:s.phase,actor:scenes[s.phase]?.actor || 'Bill sponsors',text,...data}); }
+function enter(s, phase) { s.phase=phase; const e=scenes[phase]?.evidence;if(e&&!s.evidence.includes(e))s.evidence.push(e); }
+function checkpoint(s) { const c=clone(s);c.checkpoint=null;c.notice=null;s.checkpoint=c; }
+function fail(s, message) { record(s,message);s.outcome='Not enacted';s.failure={phase:s.phase,reason:message};enter(s,'end');s.notice=null; }
+function spend(s,n=1) { s.ticks=Math.max(0,s.ticks-n);if(s.ticks===0){fail(s,'Congress has adjourned sine die at the end of its two-year term. Under Article I and the 20th Amendment, all unpassed bills expire when the congressional term ends and require reintroduction from scratch in the next Congress.');return false;}return true; }
+function amend(s,id) { if(!id)return;const before=s.current[id];s.current[id]=1;record(s,`${cards[id].name}: amendment adopted. ${cards[id].trade}`,{id,before,after:1,adopted:true}); }
+function actions(s) {
+ if(s.phase==='end')return ['retry','restart','claim'];
+ if(s.notice)return ['dismiss'];
+ if(s.phase==='builder')return ['toggle','priority','introduce'];
+ if(['committee','markup','houseAmend','senateAmend'].includes(s.phase))return proposal(s)?['accept','retain']:['continue'];
+ if(s.phase==='senateRoute')return forecast(s,'cloture').total>=60?['consent','seek']:(proposal(s)?['negotiate','seek','refuse']:['seek','refuse']);
+ if(s.phase==='reconcile')return equal(s.house,s.senate)?['identical']:['packageHouse','packageSenate'];
+ return ['continue'];
+}
+function reduce(state,action) {
+ if(action.type==='restart')return initial();
+ if(action.type==='dismiss'){const s=clone(state);s.notice=null;return s;}
+ if(!actions(state).includes(action.type))throw Error(`Action ${action.type} is invalid in ${state.phase}`);
+ const s=clone(state);
+ if(action.type==='retry') {if(!s.checkpoint)return s;const c=clone(s.checkpoint);c.checkpoint=clone(s.checkpoint);c.notice={title:'Checkpoint restored',text:'You are back at the earlier decision. This is a retry of the game, not a chance to change an introduced bill outside the amendment process.'};return c;}
+ if(action.type==='claim'){s.claim=action.value==='checks'?'correct':'retry';return s;}
+ if(s.phase==='builder') {
+  if(action.type==='toggle') {if(!cards[action.id])return s;if(s.draft.includes(action.id))s.draft=s.draft.filter(x=>x!==action.id);else if(s.draft.length<3)s.draft.push(action.id);if(!s.draft.includes(s.priority))s.priority=s.draft[0]||null;return s;}
+  if(action.type==='priority'){if(s.draft.includes(action.id))s.priority=action.id;return s;}
+  if(s.draft.length!==3||!s.draft.includes(s.priority))throw Error('Select three provisions and a priority');
+  s.current=Object.fromEntries(s.draft.map(id=>[id,0]));s.introduced=clone(s.current);s.evidence=['powers','faction','checks'];record(s,'The sponsor introduced your three provisions. The original copy is saved in this file.');enter(s,'referral');return s;
+ }
+ const previous=s.phase;
+ if(s.phase==='referral'){if(!spend(s))return s;record(s,'The bill went to the committee responsible for its subject. The chair gave it a place on the schedule.');enter(s,'committee');checkpoint(s);return s;}
+ if(['committee','markup','houseAmend','senateAmend'].includes(s.phase)) {
+  const id=proposal(s);
+  if(action.type==='accept')amend(s,id);else if(id)record(s,`${cards[id].name}: supporters kept the current wording; the proposed amendment did not get enough backing.`,{id,adopted:false});
+  if(!spend(s))return s;
+  enter(s,({committee:'markup',markup:'report',houseAmend:'houseVote',senateAmend:'senateRoute'})[previous]);
+  s.notice={title:action.type==='accept'?'Text amended':'Text preserved',text:id?(action.type==='accept'?cards[id].trade:'You kept the original wording, but unresolved objections will affect support on upcoming roll call votes.'):'No further amendment is proposed here.'};
+  return s;
+ }
+ const kind=voteKind(s.phase);
+ if(kind) {
+  const f=forecast(s,kind);record(s,`${f.total} votes; ${f.threshold} required.`,{vote:kind,total:f.total,threshold:f.threshold});
+  if(f.total<f.threshold){fail(s,`${scenes[s.phase].actor} vote came up short: ${f.total} votes, ${f.threshold} needed. ${s.phase==='cloture'?'Enough senators may support passage, but they have not agreed to end debate.':''}`);return s;}
+  if(!spend(s,s.phase==='cloture'?3:1))return s;
+  if(s.phase==='houseVote')s.house=clone(s.current);
+  if(s.phase==='senateVote')s.senate=clone(s.current);
+  if(s.phase==='houseConcur')s.house=clone(s.current);
+  if(s.phase==='senateConcur')s.senate=clone(s.current);
+  let next=({report:'houseRule',houseRule:'houseAmend',houseVote:'senateAmend',cloture:'senateVote',senateVote:'reconcile',houseConcur:'senateConcur',senateConcur:'president',overrideHouse:'overrideSenate',overrideSenate:'end'})[previous];
+  if(previous==='houseConcur'&&equal(s.current,s.senate))next='president';
+  if(next==='president'){if(!equal(s.house,s.senate))throw Error('Identical text required');s.enrolled=clone(s.current);}
+  if(previous==='overrideSenate')s.outcome='Enacted over veto';
+  enter(s,next);
+  if(['houseAmend','senateAmend'].includes(next)||(next==='reconcile'&&!equal(s.house,s.senate)))checkpoint(s);
+  s.notice=next==='end'?null:{title:kind.startsWith('override')?'Override vote passed':previous==='cloture'?'Cloture invoked · bill not yet passed':'Vote passed',text:`${f.total} voted yes. You needed ${f.threshold}. ${previous==='report'?'The bill can go to the floor once the leaders schedule it.':''}`};return s;
+ }
+ if(s.phase==='senateRoute') {
+  if(action.type==='refuse'){fail(s,'The sponsors turned down the consent deal and chose not to seek cloture. With no agreement on how to proceed, the bill stalled.');return s;}
+  if(action.type==='seek'){enter(s,'cloture');return s;}
+  if(action.type==='negotiate'){const id=proposal(s);if(id)amend(s,id);record(s,'After the change, no senator objected to the consent agreement. This is part of the game’s story; a majority alone cannot give unanimous consent.');}
+  else record(s,'No senator objected to the timetable, so the bill can reach a vote without cloture.');
+  if(!spend(s))return s;enter(s,'senateVote');return s;
+ }
+ if(s.phase==='reconcile') {
+  if(action.type==='identical'){s.enrolled=clone(s.current);enter(s,'president');return s;}
+  const chamber=action.type==='packageHouse'?'House':'Senate';
+  const responding=action.type==='packageHouse'?'Senate':'House';
+  const chosen=action.type==='packageHouse'?s.house:s.senate;
+  const other=action.type==='packageHouse'?s.senate:s.house;
+  s.current=clone(chosen);
+  record(s,`Negotiators propose the ${chamber} package. The ${responding} still has to approve it.`);
+  for(const id of Object.keys(s.current))if(chosen[id]!==other[id])record(s,`${cards[id].name}: the proposed deal brings back the ${chamber} wording. The ${responding} still needs to agree.`,{id,before:other[id],after:chosen[id],adopted:false});
+  enter(s,equal(s.house,s.current)?'senateConcur':'houseConcur');return s;
+ }
+ if(s.phase==='president') {
+  if(!s.enrolled||!equal(s.house,s.senate))throw Error('Cannot present differing texts');
+  const f=forecast(s,'president');
+  if(f.total>=f.threshold){s.outcome='Signed into law';record(s,'The president signed the entire enrolled text.');enter(s,'end');}
+  else {record(s,`The president vetoed the bill. It scored ${f.total} on the game’s measure of presidential support; a signature needs 3.`);enter(s,'overrideHouse');s.notice={title:'Regular veto',text:'The president still has concerns about the cost or how the bill would work. Congress can try to override the veto on the same text.'};}return s;
+ }
+ throw Error(`Unhandled phase: ${s.phase}`);
+}
+function validateSave(s) {
+ try {
+  if(!s||s.version!==VERSION||!['builder','end',...Object.keys(scenes)].includes(s.phase))return false;
+  if(!Array.isArray(s.draft)||s.draft.some(id=>!cards[id])||new Set(s.draft).size!==s.draft.length||s.draft.length>3)return false;
+  if(!Array.isArray(s.history)||s.history.some(h=>!h||typeof h.text!=='string'||typeof h.actor!=='string')||!Array.isArray(s.evidence)||!Number.isFinite(s.ticks)||s.ticks<0)return false;
+  if(!s.current||Array.isArray(s.current)||typeof s.current!=='object')return false;
+  for(const field of ['current','introduced','house','senate','enrolled'])if(s[field]&&Object.entries(s[field]).some(([id,v])=>!cards[id]||![0,1].includes(v)))return false;
+  if(s.phase!=='builder'&&(!s.introduced||Object.keys(s.introduced).length!==3||Object.keys(s.current).length!==3||!Object.hasOwn(s.current,s.priority)))return false;
+  if(s.phase==='end'&&typeof s.outcome!=='string')return false;
+  if(s.checkpoint&&!validateSave({...s.checkpoint,checkpoint:null}))return false;
+  return true;
+ }catch{return false;}
+}
+
+// --- app.js ---
+
+
+
+
+
+const app = document.querySelector('#app'), dialog = document.querySelector('#dialog');
+const KEY = 'billquest-v1';
+let state = initial(), storage = true, lastFocus = null;
+let world = null, location = null, conversation = null, resumeDialogue = null;
+
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY));
+  if (validateSave(saved)) state = saved;
+} catch {
+  storage = false;
+}
+
+location = { room: roomFor(state.phase), x: 11, y: 11 };
+try {
+  const saved = JSON.parse(localStorage.getItem(KEY + '-world'));
+  if (saved?.phase === state.phase && rooms[saved.room] && roomOrder.indexOf(saved.room) <= highestRoom() && Number.isInteger(saved.x) && Number.isInteger(saved.y) && isWalkable(saved.room, saved.x, saved.y, objectsFor(saved.room, state.phase, highestRoom()))) {
+    location = { room: saved.room, x: saved.x, y: saved.y };
+  }
+} catch {}
+
+const esc = x => String(x).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function button(label, action, extra = '') {
+  return `<button data-action="${action}" ${extra}>${label}</button>`;
+}
+function saveWorld() {
+  try {
+    localStorage.setItem(KEY + '-world', JSON.stringify({ ...location, phase: state.phase }));
+  } catch {
+    storage = false;
+  }
+}
+function save() {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(state));
+    saveWorld();
+  } catch {
+    storage = false;
+  }
+}
+function textOf(id, v) {
+  return cards[id].versions[v];
+}
+
+function billSprite() {
+  return `<div class="bill-sprite" aria-hidden="true"><div class="fold"></div><div class="bill-eyes">▪ ▪</div><div class="bill-line"></div><div class="bill-line short"></div><span>H.R.</span></div>`;
+}
+function scenic() {
+  return `<div class="scene-art" aria-hidden="true"><div class="moon"></div><div class="stars">· &nbsp; ✦ &nbsp; ·</div><div class="capitol"><div class="spire"></div><div class="dome"></div><div class="roof"></div><div class="columns"></div><div class="steps"></div></div><div class="land"></div>${billSprite()}<div class="art-label">WASHINGTON, D.C. <span> / </span> A FICTIONAL CONGRESS</div></div>`;
+}
+function header() {
+  return `<header class="world-header"><a class="brand" href="#world"><span class="brand-mark">▤</span><span>BILL QUEST</span></a><div class="top-actions">${button('Bill file', 'file')}${button('Evidence', 'evidence')}${button('Glossary', 'glossary')}${button('Settings', 'settings')}</div></header>`;
+}
+
+function builder() {
+  return `<section class="builder-intro"><div><p class="eyebrow">A BILL-TO-LAW STRATEGY GAME</p><h1>How much of your bill<br>will survive?</h1><p class="lede">Put your bill together, take it through Congress, and decide which changes you can live with.</p><div class="chips"><span>AP U.S. Government</span><span>Keyboard + trackpad</span><span>Emergency Alerts Route</span></div></div>${scenic()}</section><section class="workspace"><div class="builder-heading"><div><p class="eyebrow">01 / EMERGENCY ALERT ACCESSIBILITY</p><h2>What goes in your bill?</h2><p>Choose <strong>three provisions</strong>. Then pick the one you most want to keep.</p></div><span class="count">${state.draft.length} / 3 SELECTED</span></div><div class="cards">${Object.entries(cards).map(([id, c], i) => `<button class="provision ${state.draft.includes(id) ? 'selected' : ''}" data-action="toggle" data-id="${id}" aria-pressed="${state.draft.includes(id)}" ${state.draft.length === 3 && !state.draft.includes(id) ? 'aria-describedby="selection-help"' : ''}><span class="card-top"><span class="card-icon">${c.icon}</span><span class="check">${state.draft.includes(id) ? '✓' : '+'}</span></span><span class="card-number">PROVISION ${String(i + 1).padStart(2, '0')}</span><strong>${c.name}</strong><span class="card-copy">${c.versions[0]}</span><span class="card-reason">${c.reason}</span></button>`).join('')}</div><p id="selection-help" class="hint">To swap a provision, uncheck one first. Each choice gives lawmakers different reasons to support or oppose your bill.</p><div class="draft-footer"><label>Which provision matters most to you? <select id="priority" ${state.draft.length ? '' : 'disabled'}>${state.draft.map(id => `<option value="${id}" ${state.priority === id ? 'selected' : ''}>${cards[id].name}</option>`).join('')}</select></label><div class="basis"><strong>Federal authority</strong><span>Interstate commerce + Necessary and Proper Clause</span></div>${button('Introduce my bill <span aria-hidden="true">→</span>', 'introduce', `class="primary" ${state.draft.length !== 3 ? 'disabled' : ''}`)}</div><details class="disclosure"><summary>How this game works</summary><p>As the bill sponsor, you choose how your coalition responds to proposed changes and amendments as the legislation navigates committee and floor votes. People, costs, and vote counts are simulated for learning purposes.</p><p>This version follows one route through Congress. The vote counts are fixed, so the same choices produce the same results. Real bills can take other routes.</p><p>The president wants lower costs, enough time for upgrades, and accessible alerts across the country. Marking a provision as your priority does not protect it from amendments.</p><p><strong>Congressional Calendar &amp; Session Ticks:</strong> Under Article I and the 20th Amendment, each Congress spans a two-year term. Bills not enacted before <em>sine die</em> adjournment expire. You begin with 18 session ticks representing this limited calendar. Routine actions cost 1 tick, while overcoming a Senate filibuster via cloture costs 3 ticks due to required petition layover and debate time. If your ticks reach 0, the session ends and the bill expires.</p></details></section>`;
+}
+
+function forecastPanel(kind, text = state.current) {
+  const f = forecast(state, kind, text);
+  const label = { committee: 'Committee report', rule: 'House special rule', house: 'House passage', senate: 'Senate passage', cloture: 'Senate cloture', president: 'Match with the president’s priorities', overrideHouse: 'House override', overrideSenate: 'Senate override' }[kind];
+  return `<section class="forecast"><div class="forecast-top"><span>${label}</span><span class="tag">SIMULATION</span></div><div class="forecast-value"><strong>${f.total}</strong><span>/ ${f.threshold} ${kind === 'president' ? 'points needed for a signature' : 'votes needed'}</span></div><div class="meter" role="img" aria-label="${f.total} of ${f.threshold} required"><div style="width:${Math.max(0, Math.min(100, f.total / f.max * 100))}%"></div><i style="left:${Math.min(100, f.threshold / f.max * 100)}%"></i></div><p class="forecast-verdict">${kind === 'president' ? (f.total >= f.threshold ? 'The bill meets the president’s priorities.' : 'The president still has objections.') : (f.total >= f.threshold ? 'Enough support for now.' : 'Still short of the votes needed.')}</p><details><summary>Where do these numbers come from?</summary><p>The count starts at ${f.base}. The factors below change it. These numbers are made up for the game; there is no random roll.</p>${f.reasons.map(r => `<div class="factor"><span>${esc(r.label)}</span><b>${r.value > 0 ? '+' : ''}${r.value}</b></div>`).join('')}<p>For these counts, everyone votes and a quorum is present. Passage, cloture, and overrides have different requirements.</p></details></section>`;
+}
+
+function amendment() {
+  const id = proposal(state);
+  if (!id) return `<div class="proposal"><h3>No further changes proposed</h3><p>The proposed changes to these provisions have already been made. The bill is ready for the next decision.</p></div>${button('Return the reviewed text →', 'continue', 'class="primary"')}`;
+  const c = cards[id];
+  const preview = { ...state.current, [id]: 1 };
+  const kind = state.phase === 'senateAmend' ? 'cloture' : state.phase === 'houseAmend' ? 'house' : 'committee';
+  return `<div class="proposal"><p class="eyebrow">PROPOSED AMENDMENT ${id === state.priority ? ' · YOUR PRIORITY' : ''}</p><h3>${c.name}</h3><div class="redline"><div><span>CURRENT</span><p>${textOf(id, state.current[id])}</p></div><div><span>PROPOSED</span><p>${textOf(id, 1)}</p></div></div><p class="trade">${c.trade}</p><p class="hint">${kind === 'cloture' ? 'Cloture' : kind === 'committee' ? 'Committee report' : 'House passage'} support: ${forecast(state, kind).total} → ${forecast(state, kind, preview).total}. Costs 1 session tick.</p></div><div class="choice-row">${button('Support the amendment →', 'accept', 'class="primary"')}${button('Defend current text', 'retain')}</div><p class="hint">Adopting this amendment builds coalition support by addressing committee concerns. Defending the current text preserves your original policy language.</p>`;
+}
+
+function compare(a, b, original = false) {
+  return `<div class="comparison"><div><h3>${original ? 'As introduced' : 'House-approved text'}</h3>${Object.entries(a || {}).map(([id, v]) => `<article><strong>${cards[id].name}</strong><p>${textOf(id, v)}</p></article>`).join('')}</div><div><h3>${original ? 'Current / final text' : 'Senate-approved text'}</h3>${Object.entries(b || {}).map(([id, v]) => `<article class="${a?.[id] !== v ? 'changed' : ''}"><span class="status">${a?.[id] === v ? 'UNCHANGED' : 'AMENDED'}</span><strong>${cards[id].name}</strong><p>${textOf(id, v)}</p></article>`).join('')}</div></div>`;
+}
+
+function controls() {
+  if (['committee', 'markup', 'houseAmend', 'senateAmend'].includes(state.phase)) return amendment();
+  if (state.phase === 'senateRoute') {
+    const broad = forecast(state, 'cloture').total >= 60, id = proposal(state);
+    return `<div class="proposal"><h3>${broad ? 'Senators agree on a timetable.' : 'A senator objects to the agreement.'}</h3><p>${broad ? 'Nobody objects to the proposed timetable. The Senate can reach a passage vote without cloture.' : (id ? `A senator still has concerns about how the bill would work. The proposed deal changes this wording: ${textOf(id, 1)}` : 'A senator objects to the timetable, and all compromise amendments have already been exhausted. The sponsors must seek cloture to reach a vote.')}</p></div><div class="choices">${broad ? button('Use the consent agreement · 1 tick', 'consent', 'class="primary"') : (id ? button('Accept the deal · 1 tick', 'negotiate', 'class="primary"') : '')}${button('Ask sponsors to seek cloture · 3 ticks', 'seek', !broad && !id ? 'class="primary"' : '')}${broad ? '' : button('Keep the bill as it is; stop here', 'refuse', 'class="danger-text"')}</div>`;
+  }
+  if (state.phase === 'reconcile') {
+    return `${compare(state.house, state.senate)}${equal(state.house, state.senate) ? `<p>The texts already match. No reconciliation is needed.</p>${button('Enroll identical text →', 'identical', 'class="primary"')}` : `<div class="choice-row">${button('Propose House version', 'packageHouse')}${button('Propose Senate version →', 'packageSenate', 'class="primary"')}</div><p class="hint">The other chamber still has to agree to this version. Choosing a version does not pass it.</p>`}`;
+  }
+  const isVote = Boolean(voteKind(state.phase));
+  return button(
+    state.phase === 'president' ? 'Present the enrolled bill →' : isVote ? 'Hear the roll call →' : 'Hand the bill to the referral clerk →',
+    isVote ? 'startRollCall' : 'continue',
+    'class="primary"'
+  );
+}
+
+function ending() {
+  const changed = Object.keys(state.current).filter(id => state.current[id] !== state.introduced[id]);
+  return `<section class="ending"><p class="eyebrow">THE RESULT / ${state.outcome === 'Not enacted' ? 'WHY IT STOPPED' : 'LEGISLATIVE RECORD'}</p><h1>${state.outcome}.</h1><p class="lede">${state.failure ? esc(state.failure.reason) : 'Your bill made it into law. Both chambers agreed on the same text, and it cleared the final approval. Now look at what changed along the way.'}</p><div class="result-stats"><div><strong>${3 - changed.length}/3</strong><span>original provisions unchanged</span></div><div><strong>${changed.length}</strong><span>provisions amended</span></div><div><strong>${state.current[state.priority] === state.introduced[state.priority] ? 'Preserved' : 'Amended'}</strong><span>your priority clause</span></div></div>${compare(state.introduced, state.current, true)}<div class="analysis-box"><p class="eyebrow">LOOK BACK AT YOUR BILL</p><h2>What does your bill’s story show?</h2><p>${changed.length ? `${cards[changed[0]].name} changed while lawmakers worked out what they could support. ${cards[changed[0]].trade}` : 'You kept the original wording. Lawmakers still had the power to hold it up or vote against it.'} Article I requires agreement from both chambers and presentment to the president. Chamber rules add more decisions along the way.</p><div class="choices">${button('Requiring several institutions to agree checks power, but can delay a bill or change what it does.', 'claim', 'data-value="checks"')}${button('If most people want a bill, it is guaranteed to become law.', 'claim', 'data-value="majority"')}</div>${state.claim ? `<div class="feedback" role="status">${state.claim === 'correct' ? 'That fits what happened. Federalist 51 explains how divided power creates checks; Federalist 10 explains the competing interests you heard from. Getting more people to agree can take time and change the bill.' : 'Try again. A popular bill can still stall in committee, lose a chamber vote, or face a veto. Article I, Sections 5 and 7 help explain those hurdles.'}</div>` : ''}</div><div class="choice-row">${state.checkpoint ? button('Try the last decision again', 'retry') : ''}${button('Start a new bill →', 'restart', 'class="primary"')}${button('Read the full bill history', 'file')}</div></section>`;
+}
+
+function highestRoom() {
+  return Math.max(roomOrder.indexOf(roomFor(state.phase)), ...state.history.map(h => roomOrder.indexOf(roomFor(h.phase))));
+}
+function objective() {
+  const target = roomFor(state.phase);
+  if (location.room !== target) return `Find ${rooms[target].name.toLowerCase()}. That is your next stop.`;
+  return state.phase === 'builder' ? 'Head to the drafting desk to put your bill together.' : state.phase === 'end' ? 'Visit the records desk to see what changed and finish your explanation.' : `Approach ${objectsFor(location.room, state.phase, highestRoom()).find(o => o.id === 'main').name}. Look for the gold marker.`;
+}
+
+function render(focus = false) {
+  world?.dispose();
+  const place = rooms[location.room];
+  app.innerHTML = `${header()}<main id="main" class="world-main"><div class="room-heading"><div><p class="eyebrow">${place.subtitle}</p><h1>${place.name}</h1></div><div class="world-clock">${state.phase === 'builder' ? 'DRAFT IN PROGRESS' : state.phase === 'end' ? esc(state.outcome) : 'H.R. SIM-1'}<button type="button" class="ticks-badge" data-action="explainTicks" title="Click to learn about session ticks and the legislative calendar" aria-label="${state.ticks} session ticks remaining. Click to learn about session ticks.">${state.ticks} session ticks ⓘ</button></div></div><div class="world-objective"><span>◆</span><p>${objective()}</p></div><div class="world-frame"><canvas id="world" tabindex="0" role="application" aria-label="Explorable ${place.name}. Move with arrow keys or W A S D. E or Enter interacts nearby. Click the floor to walk; click a person to approach and talk. Accessible destinations follow the map."></canvas><div class="location-tag">${place.name.toUpperCase()}</div></div><div class="exploration-bar"><p id="nearby" aria-live="polite">Walk toward someone, or choose a destination below.</p>${button('Interact · E', 'interact', 'id="interact" disabled')}</div><div class="walk-help"><span>ARROWS / WASD <b>walk</b></span><span>E / ENTER <b>interact</b></span><span>TRACKPAD <b>click to walk</b></span><span>ESC <b>close dialogue</b></span></div><details class="destinations"><summary>People, objects & doors · keyboard / trackpad navigation</summary><div id="destinations"></div></details><p class="world-footnote">${storage ? 'Progress saved in this browser.' : 'Storage unavailable. Keep this tab open.'} Take your time. The people and vote counts are fictional; the government rules are real.</p></main>`;
+
+  world = mountWorld(document.querySelector('#world'), {
+    phase: state.phase,
+    highest: highestRoom(),
+    location,
+    amended: Object.values(state.current).filter(v => v === 1).length,
+    blocked: () => dialog.open,
+    reduced: () => document.documentElement.classList.contains('reduce-motion') || matchMedia('(prefers-reduced-motion: reduce)').matches,
+    onNearby: (o) => {
+      document.querySelector('#nearby').textContent = o ? `${o.name}${o.locked ? ' · awaiting your bill' : ' · press E to interact'}` : 'Walk toward someone, or choose a destination below.';
+      document.querySelector('#interact').disabled = !o;
+    },
+    onMove: (point) => {
+      Object.assign(location, point);
+      saveWorld();
+    },
+    onRoom: (room) => {
+      location = { room, x: 11, y: 11 };
+      saveWorld();
+      conversation = null;
+      render(true);
+    },
+    onInteract: interactObject
+  });
+
+  document.querySelector('#destinations').innerHTML = world.objects.map(o => button(`${o.type === 'door' ? '↗' : o.type === 'evidence' ? '▤' : '●'} ${o.name}${o.locked ? ' · closed' : ''}`, 'walk', `data-id="${o.id}"`)).join('');
+  if (state.notice && !state.outcome && !(state.phase === 'overrideHouse' && state.notice.title === 'Regular veto')) {
+    showNotice();
+  } else if (focus) {
+    document.querySelector('#world')?.focus();
+  }
+}
+
+function chunks(text) {
+  return text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map(t => t.trim()).filter(Boolean) || [text];
+}
+
+function startConversation(name, beats, finish = null, source = null) {
+  resumeDialogue = null;
+  conversation = { name, beats, index: 0, finish, source };
+  showBeat();
+}
+
+function showBeat() {
+  const c = conversation;
+  if (!c) return;
+  const last = c.index === c.beats.length - 1;
+  openModal(
+    esc(c.name),
+    `<div class="conversation"><div class="portrait" aria-hidden="true"><span class="portrait-head"></span><span class="portrait-body"></span></div><div><p class="dialogue-beat" aria-live="polite">${esc(c.beats[c.index])}</p><span class="beat-count">${c.index + 1} / ${c.beats.length}</span></div></div><div class="dialogue-actions">${button(last ? (c.finish === 'notice' ? 'Back to the room' : c.finish === 'draft' ? 'Open the drafting desk →' : c.finish === 'ending' ? 'Read the record →' : c.finish === 'evidence' ? 'Open the ledger →' : c.finish ? 'Take a look →' : 'Back to the room') : 'Next →', 'talkNext', 'class="primary"')}${last && c.source ? button('Ask more', 'source', `data-id="${c.source}"`) : ''}</div>`
+  );
+  dialog.classList.add('conversation-dialog');
+  dialog.querySelector('[data-action="talkNext"]')?.focus();
+}
+
+function nextBeat() {
+  const c = conversation;
+  if (!c) return;
+  if (++c.index < c.beats.length) return showBeat();
+  conversation = null;
+  if (c.finish === 'draft') return openModal('Drafting desk · Emergency Alerts', builder());
+  if (c.finish === 'ending') return openModal('Your legislative record', ending());
+  if (c.finish === 'encounter') return openEncounter();
+  if (c.finish === 'notice') return dispatch({ type: 'dismiss' });
+  if (c.finish === 'evidence') return evidence();
+  closeModal();
+}
+
+function interactObject(o) {
+  if (o.type === 'evidence') return startConversation('Evidence shelf', ['Wondering where these rules come from? The sources are here.', 'Each entry explains what the source says and how it relates to your bill.'], 'evidence');
+  if (o.id === 'main') {
+    if (location.room !== roomFor(state.phase)) return startConversation(o.name, ['We are finished here for now.', objective()]);
+    if (state.phase === 'builder') return startConversation('Legislative counsel', ['Let’s put your bill together. Pick three provisions from the cards on this desk.', 'Because these alerts travel across state lines, Congress can draw on its interstate commerce power. A member of Congress will need to introduce your bill.', 'Pick the provision you most want to keep. Lawmakers may still ask to change it.', 'You will choose how your coalition responds to proposed amendments as the legislation moves forward.'], 'draft', 'powers');
+    if (state.phase === 'end') return startConversation('Records clerk', [state.outcome === 'Not enacted' ? 'Your bill stopped before it could become law. Let’s look at who stopped it and why.' : 'Your bill became law. Let’s compare it with the version you brought in.', 'Check what you kept, what you changed, and which decisions mattered. Then put together your explanation.'], 'ending', 'checks');
+    const c = scenes[state.phase], talk = conversations[state.phase];
+    return startConversation(talk?.speaker || c.actor, talk?.beats || [...chunks(c.text), ...chunks(c.lesson)], 'encounter', c.evidence);
+  }
+  startConversation(o.name, o.beats || ['A quiet corner of the Capitol.'], null, o.source);
+}
+
+function openEncounter() {
+  const c = scenes[state.phase];
+  const kind = voteKind(state.phase) || (state.phase === 'president' ? 'president' : null);
+
+  const chamberBanner = (() => {
+    if (['committee', 'markup'].includes(state.phase)) {
+      return `<div class="chamber-banner chamber-committee"><span>⚖</span> COMMITTEE ON ENERGY & COMMERCE · MARKUP</div>`;
+    }
+    if (state.phase === 'report') {
+      return `<div class="chamber-banner chamber-committee"><span>⚖</span> COMMITTEE ON ENERGY & COMMERCE · REPORT VOTE</div>`;
+    }
+    if (state.phase.startsWith('house') || state.phase === 'overrideHouse') {
+      return `<div class="chamber-banner chamber-house"><span>🏛</span> HOUSE OF REPRESENTATIVES · FLOOR PROCEEDINGS</div>`;
+    }
+    if (state.phase.startsWith('senate') || state.phase === 'cloture' || state.phase === 'overrideSenate') {
+      return `<div class="chamber-banner chamber-senate"><span>🦅</span> UNITED STATES SENATE · LEGISLATIVE SESSION</div>`;
+    }
+    if (state.phase === 'reconcile') {
+      return `<div class="chamber-banner chamber-agreement"><span>▤</span> BICAMERAL CONFERENCE · AMENDMENT EXCHANGE</div>`;
+    }
+    if (state.phase === 'president') {
+      return `<div class="chamber-banner chamber-executive"><span>★</span> THE WHITE HOUSE · PRESIDENTIAL PRESENTMENT</div>`;
+    }
+    return '';
+  })();
+
+  openModal(
+    c.actor,
+    `${chamberBanner}<div class="encounter-intro"><span class="tag">${c.tag}</span><h2>${c.title}</h2></div>${kind ? forecastPanel(kind) : ''}${state.phase === 'senateRoute' ? `<div class="dual-forecast">${forecastPanel('senate')}${forecastPanel('cloture')}</div>` : ''}${controls()}`
+  );
+  dialog.classList.add(kind ? 'major-encounter' : 'decision-dialog');
+}
+
+function openModal(title, body, notice = false) {
+  dialog.className = '';
+  lastFocus = document.activeElement;
+  dialog.innerHTML = `<div class="dialog-head"><h2 id="dialog-title">${title}</h2>${button(notice ? 'Continue →' : 'Close ✕', notice ? 'dismiss' : 'close', notice ? 'class="primary"' : '')}</div><div class="dialog-body">${body}</div>`;
+  if (!dialog.open) dialog.showModal();
+  dialog.querySelector('button')?.focus();
+}
+
+function showNotice() {
+  startConversation(state.notice.title, chunks(state.notice.text), 'notice');
+}
+
+function closeModal() {
+  if (resumeDialogue) {
+    conversation = resumeDialogue;
+    resumeDialogue = null;
+    showBeat();
+    return;
+  }
+  conversation = null;
+  dialog.close();
+  document.querySelector('#world')?.focus();
+}
+
+function file() {
+  openModal('Your bill file', `${state.introduced ? compare(state.introduced, state.current, true) : '<p>Your bill history starts when a member introduces it.</p>'}<h3>What happened along the way</h3><ol class="history">${state.history.map(h => `<li><strong>${esc(h.actor)}</strong><p>${esc(h.text)}</p></li>`).join('')}</ol><p>The original copy stays in this file. Retrying a decision takes you back to an earlier point in the game.</p>`);
+}
+
+function evidence(id) {
+  if (conversation && dialog.classList.contains('conversation-dialog')) resumeDialogue = { ...conversation };
+  const entries = id ? [[id, sources[id]]] : Object.entries(sources);
+  openModal('Evidence ledger', entries.map(([key, s]) => `<article class="source"><span class="tag">${s.tag}</span><h3>${s.title}</h3><p>${s.text}</p><p class="hint">${state.evidence.includes(key) ? 'Used in your bill’s story' : 'More background'}</p><a href="${s.url}" target="_blank" rel="noopener noreferrer">Read the source ↗</a></article>`).join(''));
+}
+
+// Tension-filled Recorded Roll Call overlay
+function triggerRollCall(kind) {
+  const f = forecast(state, kind);
+  const passed = f.total >= f.threshold;
+  const nays = f.max - f.total;
+  const pct = Math.min(100, Math.max(0, (f.total / f.max) * 100));
+  const threshPct = Math.min(100, Math.max(0, (f.threshold / f.max) * 100));
+  const isReduced = document.documentElement.classList.contains('reduce-motion') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const titles = {
+    report: { badge: 'COMMITTEE ON ENERGY & COMMERCE', title: 'Full Committee Report Vote', body: '25 committee members voting' },
+    houseRule: { badge: 'HOUSE OF REPRESENTATIVES', title: 'Adoption of Structured Rule', body: '435 members present and voting' },
+    houseVote: { badge: 'HOUSE OF REPRESENTATIVES', title: 'Final Passage of H.R. SIM-1', body: '435 members present and voting' },
+    cloture: { badge: 'UNITED STATES SENATE', title: 'Vote on Cloture (Senate Rule XXII)', body: '100 senators duly chosen and sworn' },
+    senateVote: { badge: 'UNITED STATES SENATE', title: 'Final Passage in the Senate', body: '100 senators voting' },
+    houseConcur: { badge: 'HOUSE OF REPRESENTATIVES', title: 'Concurrence in Senate Amendment', body: '435 members voting' },
+    senateConcur: { badge: 'UNITED STATES SENATE', title: 'Concurrence in House Amendment', body: '100 senators voting' },
+    overrideHouse: { badge: 'HOUSE OF REPRESENTATIVES', title: 'Veto Override Reconsideration', body: 'Two-thirds supermajority required' },
+    overrideSenate: { badge: 'UNITED STATES SENATE', title: 'Veto Override Reconsideration', body: 'Two-thirds supermajority required' }
+  }[state.phase] || { badge: 'LEGISLATIVE VOTE', title: 'Recorded Roll Call', body: 'Members voting' };
+
+  openModal(titles.title, `
+    <div class="rollcall-wrap">
+      <span class="rollcall-badge">${titles.badge}</span>
+      <h2 class="rollcall-title">${titles.title}</h2>
+      <p class="rollcall-sub">${titles.body} · ${f.threshold} affirmative votes required to pass</p>
+      <div class="tally-grid">
+        <div class="tally-box yea">
+          <span class="tally-label">YEAS (IN FAVOR)</span>
+          <strong id="roll-yeas">${isReduced ? f.total : 0}</strong>
+          <span class="tally-needed">Needed to pass: ${f.threshold}</span>
+        </div>
+        <div class="tally-box nay">
+          <span class="tally-label">NAYS (OPPOSED)</span>
+          <strong id="roll-nays">${isReduced ? nays : 0}</strong>
+          <span class="tally-needed">Total chamber size: ${f.max}</span>
+        </div>
+      </div>
+      <div class="roll-meter-wrap">
+        <div id="roll-meter-fill" class="roll-meter-fill" style="width: ${isReduced ? pct : 0}%"></div>
+        <div class="roll-threshold-marker" style="left: ${threshPct}%">
+          <span class="roll-threshold-label">${f.threshold} TO PASS</span>
+        </div>
+      </div>
+      <div id="roll-stamp-wrap" class="roll-stamp-wrap ${isReduced ? '' : 'hidden'}">
+        <div class="roll-stamp ${passed ? 'stamp-pass' : 'stamp-fail'}">${passed ? 'AGREED TO' : 'REJECTED'}</div>
+        <p class="roll-summary">${passed ? `${f.total} members voted Yea, exceeding the constitutional requirement of ${f.threshold}.` : `The affirmative votes (${f.total}) fell short of the required threshold of ${f.threshold}.`}</p>
+      </div>
+      <div id="roll-action-btn" class="${isReduced ? '' : 'hidden'}" style="margin-top:20px">
+        ${button('Record Result & Proceed →', 'confirmRollCall', 'class="primary"')}
+      </div>
+    </div>
+  `);
+  dialog.classList.add('rollcall-dialog');
+
+  if (!isReduced) {
+    const startTime = performance.now();
+    const duration = 850;
+    function updateTally(now) {
+      if (!dialog.open) return;
+      const progress = Math.min(1, (now - startTime) / duration);
+      const curYeas = Math.round(f.total * progress);
+      const curNays = Math.round(nays * progress);
+      const curPct = pct * progress;
+      const yeasEl = document.querySelector('#roll-yeas');
+      const naysEl = document.querySelector('#roll-nays');
+      const fillEl = document.querySelector('#roll-meter-fill');
+      if (yeasEl) yeasEl.textContent = curYeas;
+      if (naysEl) naysEl.textContent = curNays;
+      if (fillEl) fillEl.style.width = `${curPct}%`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateTally);
+      } else {
+        const stampEl = document.querySelector('#roll-stamp-wrap');
+        const btnEl = document.querySelector('#roll-action-btn');
+        if (stampEl) stampEl.classList.remove('hidden');
+        if (btnEl) btnEl.classList.remove('hidden');
+        btnEl?.querySelector('button')?.focus();
+      }
+    }
+    requestAnimationFrame(updateTally);
+  }
+}
+
+// Official Enactment Ceremony
+function showSigningCeremony() {
+  openModal('Enacted into Law', `
+    <div class="ceremony">
+      <span class="ceremony-badge">THE WHITE HOUSE · WASHINGTON</span>
+      <h1>ENACTED INTO PUBLIC LAW</h1>
+      <p class="ceremony-sub">H.R. SIM-1 has received the presidential signature and is codified into federal statute.</p>
+      <div class="ceremony-parchment">
+        <div class="parchment-header">
+          <span>ONE HUNDRED NINETEENTH CONGRESS OF THE UNITED STATES</span>
+          <strong>Public Law 119-SIM</strong>
+          <em>An Act to modernize and ensure nationwide accessibility for emergency alerts.</em>
+        </div>
+        <div class="parchment-body">
+          <p>Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,</p>
+          <p>Having passed both the House of Representatives and the Senate in identical form pursuant to Article I, Section 7, and having been presented to the President:</p>
+        </div>
+        <div class="parchment-sign">
+          <span class="sign-seal">THE GREAT SEAL</span>
+          <div class="sign-line">
+            <span class="sign-signature">Approved — The President</span>
+            <small>THE WHITE HOUSE</small>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px">
+        ${button('Proceed to Legislative Debrief & Analysis →', 'viewDebrief', 'class="primary"')}
+      </div>
+    </div>
+  `);
+}
+
+// Congressional Veto Override Ceremony
+function showOverrideCeremony() {
+  openModal('Veto Overridden', `
+    <div class="ceremony">
+      <span class="ceremony-badge">CONGRESS OF THE UNITED STATES</span>
+      <h1>VETO OVERRIDDEN — ENACTED INTO LAW</h1>
+      <p class="ceremony-sub">Two-thirds of both the House and the Senate have voted to override the President’s disapproval.</p>
+      <div class="ceremony-parchment">
+        <div class="parchment-header">
+          <span>BICAMERAL SUPERMAJORITY · ARTICLE I, SECTION 7</span>
+          <strong>Public Law 119-SIM (Enacted Over Veto)</strong>
+          <em>The objections of the President of the United States notwithstanding.</em>
+        </div>
+        <div class="parchment-body">
+          <p>The House of Representatives having voted by two-thirds (290+) to approve the bill, and the Senate having likewise approved the bill by two-thirds (67+):</p>
+          <p>Resolved, that the bill do pass, the objections of the President to the contrary notwithstanding.</p>
+        </div>
+        <div class="parchment-sign">
+          <span class="sign-seal">CONGRESSIONAL SEAL</span>
+          <div class="sign-line">
+            <span class="sign-signature">Ratified by Congress</span>
+            <small>CAPITOL HILL</small>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px">
+        ${button('Proceed to Legislative Debrief & Analysis →', 'viewDebrief', 'class="primary"')}
+      </div>
+    </div>
+  `);
+}
+
+// Official Institutional Autopsy Ceremony
+function showFailureCeremony() {
+  const failPhase = state.failure?.phase || state.phase;
+  const hurdleName = {
+    report: 'Committee Gatekeeping Defeat',
+    houseVote: 'Defeated on the House Floor',
+    cloture: 'Senate Filibuster / Cloture Shortfall',
+    senateRoute: 'Unanimous Consent Standoff / Filibuster',
+    senateVote: 'Defeated on the Senate Floor',
+    houseConcur: 'Bicameral Concurrence Rejection',
+    senateConcur: 'Bicameral Concurrence Rejection',
+    overrideHouse: 'Veto Sustained in the House',
+    overrideSenate: 'Veto Sustained in the Senate'
+  }[failPhase] || 'Session Adjournment Sine Die';
+
+  openModal('Bill Not Enacted', `
+    <div class="ceremony">
+      <span class="ceremony-badge">CONGRESSIONAL RECORD · BILL DISPOSITION</span>
+      <div class="roll-stamp stamp-fail" style="margin: 12px 0 16px;">NOT ENACTED</div>
+      <h1>${hurdleName}</h1>
+      <p class="ceremony-sub">${esc(state.failure?.reason || 'The bill stalled before clearing all constitutional hurdles.')}</p>
+      <div class="autopsy-box">
+        <h3>Institutional Autopsy</h3>
+        <div class="autopsy-point">
+          <strong>Where the Process Stopped</strong>
+          <span>${scenes[failPhase]?.actor || 'Congressional Process'} (${scenes[failPhase]?.tag || 'PROCEDURE'})</span>
+        </div>
+        <div class="autopsy-point">
+          <strong>Constitutional Principle</strong>
+          <span>As Madison warned in Federalist 51, the American legislative process creates multiple institutional veto points. A proposal must build successive, durable coalitions to survive.</span>
+        </div>
+      </div>
+      <div class="choice-row" style="justify-content:center;margin-top:20px">
+        ${state.checkpoint ? button('Try the last decision again', 'retry', 'class="primary"') : ''}
+        ${button('Review Full History & Debrief', 'viewDebrief')}
+        ${button('Start a new bill', 'restart')}
+      </div>
+    </div>
+  `);
+}
+
+// Regular Veto Return Ceremony
+function showVetoCeremony() {
+  openModal('Regular Veto', `
+    <div class="ceremony">
+      <span class="ceremony-badge">EXECUTIVE MANSION · ARTICLE I, SECTION 7</span>
+      <div class="roll-stamp stamp-fail" style="margin: 12px 0 16px;">REGULAR VETO</div>
+      <h1>Returned With Objections</h1>
+      <p class="ceremony-sub">The President has refused to sign H.R. SIM-1 and returned the enrolled text to the House of Representatives.</p>
+      <div class="autopsy-box">
+        <h3>Presidential Veto Message</h3>
+        <p>The President concluded that the bill’s compliance timeline or costs do not align with administration priorities. Under Article I, Section 7, the President cannot strike individual provisions (no line-item veto) and must veto the bill as a whole.</p>
+        <p>Congress now has the constitutional authority to attempt an override. An override requires a two-thirds supermajority in both chambers on the exact, locked text.</p>
+      </div>
+      <div style="margin-top:20px">
+        ${button('Reconsider on the House Floor →', 'dismiss', 'class="primary"')}
+      </div>
+    </div>
+  `);
+}
+
+function dispatch(action) {
+  try {
+    state = reduce(state, action);
+    save();
+    if (['toggle', 'priority'].includes(action.type)) {
+      openModal('Drafting desk · Emergency Alerts', builder());
+      return;
+    }
+    if (action.type === 'claim') {
+      openModal('Your legislative record', ending());
+      return;
+    }
+    conversation = null;
+    if (['restart'].includes(action.type)) {
+      location = { room: 'corridor', x: 11, y: 11 };
+      saveWorld();
+    }
+    if (action.type === 'retry') {
+      location = { room: roomFor(state.phase), x: 11, y: 11 };
+      saveWorld();
+    }
+    if (dialog.open) dialog.close();
+    render(true);
+
+    if (state.outcome === 'Signed into law') {
+      showSigningCeremony();
+    } else if (state.outcome === 'Enacted over veto') {
+      showOverrideCeremony();
+    } else if (state.outcome === 'Not enacted') {
+      showFailureCeremony();
+    } else if (state.phase === 'overrideHouse' && state.notice?.title === 'Regular veto') {
+      showVetoCeremony();
+    }
+  } catch (e) {
+    openModal('Action unavailable', `<p>${esc(e.message)}</p>`);
+  }
+}
+
+function handle(e) {
+  const b = e.target.closest('[data-action]');
+  if (!b) return;
+  const a = b.dataset.action;
+
+  if (a === 'walk') return world.go(world.objects.find(o => o.id === b.dataset.id));
+  if (a === 'interact') return world.interact();
+  if (a === 'talkNext') return nextBeat();
+  if (a === 'file') return file();
+  if (a === 'evidence' || a === 'source') return evidence(b.dataset.id);
+  if (a === 'startRollCall') return triggerRollCall(voteKind(state.phase));
+  if (a === 'confirmRollCall') return dispatch({ type: 'continue' });
+  if (a === 'viewDebrief') return openModal('Your legislative record', ending());
+  if (a === 'retry') return dispatch({ type: 'retry' });
+  if (a === 'restart') return dispatch({ type: 'restart' });
+
+  if (a === 'close') {
+    if (state.notice) return dispatch({ type: 'dismiss' });
+    return closeModal();
+  }
+  if (a === 'explainTicks') return openModal('Session Ticks & The Legislative Calendar', `
+    <article class="tick-explainer">
+      <p class="lede"><strong>Session ticks simulate the scarce legislative calendar of a two-year congressional term.</strong></p>
+      <h3>Constitutional Deadline: Article I &amp; the 20th Amendment</h3>
+      <p>Under the U.S. Constitution, each Congress lasts exactly <strong>two years</strong> across two annual sessions. Every bill introduced is in a race against the calendar. When a Congress adjourns <em>sine die</em> at the end of its two-year term, any bill that has not been passed by both chambers and signed into law dies automatically. Bills never carry over to a new Congress; sponsors must reintroduce them from scratch.</p>
+      <h3>Why Legislative Actions Cost Ticks</h3>
+      <p>A legislative term has a finite number of working floor days. You begin with <strong>18 session ticks</strong> simulating that limited calendar budget:</p>
+      <ul>
+        <li><strong>Committee referral &amp; markup (1 tick):</strong> Committees review thousands of measures, but chairs have limited days to hold hearings, mark up text, and report bills out.</li>
+        <li><strong>House special rules &amp; floor passage (1 tick):</strong> Navigating the Rules Committee and finding debate time on the busy House floor consumes calendar days.</li>
+        <li><strong>Senate filibuster &amp; cloture (3 ticks):</strong> Under Senate Rule XXII, overcoming extended debate requires filing a 16-signature petition, observing a mandatory layover period, holding a vote requiring three-fifths of all senators (60 votes), and up to 30 hours of post-cloture debate.</li>
+        <li><strong>Bicameral reconciliation &amp; veto overrides (1–2 ticks):</strong> Resolving House-Senate differences via amendment exchange or conference committee, or voting in both chambers to override a presidential veto, requires additional legislative days late in the session.</li>
+      </ul>
+      <p class="hint">Watch your tick budget in the upper right. If your ticks reach 0 before your bill becomes law, Congress adjourns and the bill dies!</p>
+    </article>
+  `);
+  if (a === 'glossary') return openModal('Government terms', `<dl>${Object.entries(glossary).map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`);
+  if (a === 'settings') return openModal('Play settings', `<label class="setting"><input type="checkbox" id="motion" ${document.documentElement.classList.contains('reduce-motion') ? 'checked' : ''}> Reduce motion</label><p>Walk with arrow keys or WASD. Press E or Enter near a person or object. Click the floor to walk, or click an NPC to approach and talk. Tab reaches accessible destination buttons; these walk your character to the destination. Escape closes dialogue. This build has no audio or timed input.</p><p>Progress stays on this browser only. School policies may clear storage; the game works without it.</p><p>This version includes the Emergency Alerts bill, fixed vote counts, amendment exchange, signatures, vetoes, and overrides.</p>${button('Restart this run', 'confirmRestart', 'class="danger-text"')}`);
+  if (a === 'confirmRestart') return openModal('Start over?', `<p>This clears the current run on this browser.</p>${button('Start a new bill', 'resetAll', 'class="primary"')}`);
+  if (a === 'resetAll') {
+    state = initial();
+    location = { room: 'corridor', x: 11, y: 11 };
+    conversation = null;
+    save();
+    dialog.close();
+    return render(true);
+  }
+  if (a === 'toggle' && !state.draft.includes(b.dataset.id) && state.draft.length === 3) {
+    document.querySelector('#selection-help').textContent = 'Deselect one of the three checked provisions first, then choose this one.';
+    document.querySelector('#selection-help').setAttribute('role', 'status');
+    return;
+  }
+
+  dispatch({ type: a, id: b.dataset.id, value: b.dataset.value });
+  if (a === 'toggle') document.querySelector(`[data-action="toggle"][data-id="${b.dataset.id}"]`)?.focus();
+}
+
+document.addEventListener('click', handle);
+document.addEventListener('change', e => {
+  if (e.target.id === 'priority') {
+    dispatch({ type: 'priority', id: e.target.value });
+    document.querySelector('#priority')?.focus();
+  }
+  if (e.target.id === 'motion') {
+    document.documentElement.classList.toggle('reduce-motion', e.target.checked);
+    try {
+      localStorage.setItem('billquest-motion', String(e.target.checked));
+    } catch {}
+  }
+});
+dialog.addEventListener('cancel', e => {
+  e.preventDefault();
+  if (state.notice) dispatch({ type: 'dismiss' });
+  else closeModal();
+});
+
+try {
+  document.documentElement.classList.toggle('reduce-motion', localStorage.getItem('billquest-motion') === 'true');
+} catch {}
+
+render();
+
+})();
+
+</script>
+</head>
+<body><a class="skip" href="#main">Skip to game</a><div id="app"></div><noscript>This game needs JavaScript enabled in Chrome. No extension or account is required.</noscript><dialog id="dialog" aria-labelledby="dialog-title"></dialog></body>
+</html>
