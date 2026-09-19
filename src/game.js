@@ -16,7 +16,7 @@ export function forecast(s, kind, text = s.current) {
 }
 export function proposal(s) {
  const pending = Object.keys(s.current).filter(id=>s.current[id]===0);
- const order = s.phase === 'markup' ? [s.priority,...pending] : s.phase === 'senateAmend' ? ['waiver','standard','grants','deadline'] : ['deadline','grants','waiver','standard'];
+ const order = s.phase === 'markup' ? [s.priority,...pending] : s.phase === 'senateAmend' ? ['preemption','waiver','standard','penalties','grants','deadline'] : ['deadline','grants','penalties','preemption','waiver','standard'];
  return order.find(id=>pending.includes(id)) || null;
 }
 export function voteKind(phase) { return ({report:'committee',houseRule:'rule',houseVote:'house',cloture:'cloture',senateVote:'senate',houseConcur:'house',senateConcur:'senate',overrideHouse:'overrideHouse',overrideSenate:'overrideSenate'})[phase]; }

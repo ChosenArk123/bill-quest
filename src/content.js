@@ -94,6 +94,54 @@ export const cards = {
       ]
     ],
     "trade": "Providers have less time to fix technical problems, but fewer people are left waiting for better alerts."
+  },
+  "preemption": {
+    "name": "State preemption standard",
+    "icon": "⚖",
+    "reason": "National carriers seek uniform federal alert rules. States fight to preserve local emergency authority.",
+    "versions": [
+      "Federal accessibility rules preempt state and local emergency-alert requirements to ensure national uniformity.",
+      "Federal rules establish a regulatory floor, allowing states to enforce additional emergency-alert protections."
+    ],
+    "effects": [
+      [
+        12,
+        1,
+        0,
+        2
+      ],
+      [
+        6,
+        5,
+        5,
+        1
+      ]
+    ],
+    "trade": "Preserving state authority pleases governors and local agencies, but carriers face differing regional requirements."
+  },
+  "penalties": {
+    "name": "FCC enforcement penalties",
+    "icon": "§",
+    "reason": "Strict monetary fines compel rapid compliance. Telecommunications carriers warn penalties could bankrupt small systems.",
+    "versions": [
+      "Authorize FCC civil penalties of up to $25,000 per violation for unaddressed emergency-alert failures.",
+      "Direct FCC to offer compliance counseling and a 60-day cure period before issuing financial penalties."
+    ],
+    "effects": [
+      [
+        6,
+        2,
+        1,
+        3
+      ],
+      [
+        10,
+        5,
+        4,
+        1
+      ]
+    ],
+    "trade": "A cure period gives struggling operators time to fix defects, but delays accountability for willful noncompliance."
   }
 };
 

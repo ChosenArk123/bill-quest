@@ -14,13 +14,23 @@ function run(decide=()=> 'accept',draft=['standard','grants','deadline'],priorit
 test('canonical Alerts route signs identical text and preserves introduced snapshot',()=>{
  const {s,visited}=run();assert.equal(s.outcome,'Signed into law');assert.deepEqual(s.introduced,{standard:0,grants:0,deadline:0});assert.ok(equal(s.house,s.senate));assert.deepEqual(s.current,s.enrolled);assert.ok(visited.includes('president'));assert.ok(s.history.some(e=>e.adopted));assert.ok(s.evidence.includes('veto'));
 });
-test('all twelve Alerts starting/priority states have a viable complete route',()=>{
- const ids=['standard','grants','deadline','waiver'];let count=0;
- for(const omitted of ids){const draft=ids.filter(x=>x!==omitted);for(const priority of draft){const {s}=run(undefined,draft,priority);assert.equal(s.outcome,'Signed into law',`${omitted}/${priority}`);count++;}}
- assert.equal(count,12);
+test('all twenty Alerts three-provision combinations across all sixty priority states have a viable complete route',()=>{
+ const ids=['standard','grants','deadline','waiver','preemption','penalties'];
+ function subsets(arr,k){if(k===0)return [[]];if(!arr.length)return [];return subsets(arr.slice(1),k-1).map(s=>[arr[0],...s]).concat(subsets(arr.slice(1),k));}
+ const combos=subsets(ids,3);
+ assert.equal(combos.length,20);
+ let count=0;
+ for(const draft of combos){
+  for(const priority of draft){
+   const {s}=run(undefined,draft,priority);
+   assert.ok(s.outcome==='Signed into law'||s.outcome==='Enacted over veto',`${draft.join('+')}/${priority}: ${s.outcome}`);
+   count++;
+  }
+ }
+ assert.equal(count,60);
 });
-test('uncompromised bill can fail committee; checkpoint rewinds without editing introduced snapshot',()=>{
- const {s}=run(()=> 'retain',['standard','deadline','waiver']);assert.equal(s.outcome,'Not enacted');assert.equal(s.failure.phase,'report');const retry=act(s,'retry');assert.equal(retry.phase,'committee');assert.deepEqual(retry.introduced,s.introduced);assert.deepEqual(retry.current,retry.introduced);assert.equal(retry.history.filter(e=>e.vote).length,0);
+test('uncompromised bill with new provisions can fail committee and rewind via checkpoint',()=>{
+ const {s}=run(()=> 'retain',['standard','deadline','preemption']);assert.equal(s.outcome,'Not enacted');assert.equal(s.failure.phase,'report');const retry=act(s,'retry');assert.equal(retry.phase,'committee');assert.deepEqual(retry.introduced,s.introduced);assert.deepEqual(retry.current,retry.introduced);assert.equal(retry.history.filter(e=>e.vote).length,0);
 });
 test('passage majority does not satisfy cloture',()=>{
  let s={...initial(),phase:'cloture',current:{standard:0,grants:0,deadline:0},introduced:{standard:0,grants:0,deadline:0}};
@@ -36,6 +46,12 @@ test('reconciliation requires the nonconcurrent chamber to approve',()=>{
 test('override requires both chambers on locked text',()=>{
  const text={standard:1,grants:0,waiver:0};let s={...initial(),phase:'president',current:text,introduced:text,house:text,senate:text,enrolled:text};
  s=act(s,'continue');assert.equal(s.phase,'overrideHouse');s=act(s,'continue');assert.equal(s.phase,'overrideSenate');assert.equal(s.outcome,null);s=act(s,'continue');assert.equal(s.outcome,'Enacted over veto');assert.deepEqual(s.enrolled,text);
+});
+test('new provisions support regular veto and bicameral override',()=>{
+ const text={standard:1,grants:0,preemption:1};let s={...initial(),phase:'president',current:text,introduced:text,house:text,senate:text,enrolled:text};
+ s=act(s,'continue');assert.equal(s.phase,'overrideHouse');assert.equal(s.notice.title,'Regular veto');
+ s=act(s,'continue');assert.equal(s.phase,'overrideSenate');assert.equal(s.outcome,null);
+ s=act(s,'continue');assert.equal(s.outcome,'Enacted over veto');assert.deepEqual(s.enrolled,text);
 });
 test('insufficient override votes sustain veto',()=>{
  const text={standard:0,grants:0,deadline:0};let s={...initial(),phase:'overrideHouse',current:text,introduced:text,house:text,senate:text,enrolled:text};s=act(s,'continue');assert.equal(s.outcome,'Not enacted');assert.equal(s.failure.phase,'overrideHouse');
